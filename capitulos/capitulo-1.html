@@ -130,16 +130,17 @@
             </div>
 
             <!-- Nueva Sección: Primeros Pasos con RetroArch -->
-    <div class="retroarch-steps">
-    <h2 class="glow-text" style="margin-bottom: 1.5rem;">🚀 Primeros Pasos con RetroArch</h2>
+    <div class="retroarch-guide">
+    <h2 class="glow-text">🚀 Primeros Pasos con RetroArch</h2>
     
-    <ol class="retro-list">
+    <div class="step-container">
         <!-- Paso 1 -->
-        <li>
+        <div class="step-item">
+            <div class="step-number">01</div>
             <div class="step-content">
-                <h3 style="color: #ff0; margin: 0 0 1rem 0;">Instalación</h3>
-                <div class="code-sample">
-                    <pre style="margin: 0;">
+                <h3>Instalación</h3>
+                <div class="code-block">
+                    <pre>
 # Linux
 sudo apt install retroarch
 
@@ -150,39 +151,35 @@ winget install RetroArch
 brew install --cask retroarch</pre>
                 </div>
             </div>
-        </li>
+        </div>
 
         <!-- Paso 2 -->
-        <li>
+        <div class="step-item">
+            <div class="step-number">02</div>
             <div class="step-content">
-                <h3 style="color: #ff0; margin: 0 0 1rem 0;">Configuración Básica</h3>
-                <ul>
-                    <li>Ejecuta RetroArch y navega a:
-                        <kbd style="margin-left: 0.5rem;">Settings ▸ Drivers</kbd>
-                    </li>
-                    <li>Selecciona:
-                        <ul style="margin-top: 0.5rem;">
-                            <li><span style="color: #0f0;">Video:</span> gl (Linux/Windows) o metal (macOS)</li>
-                            <li><span style="color: #0f0;">Audio:</span> alsa (Linux) / xaudio2 (Windows)</li>
-                        </ul>
-                    </li>
+                <h3>Configuración Básica</h3>
+                <ul class="config-list">
+                    <li><span class="cli-command">Settings ▸ Drivers</span></li>
+                    <li>Video: <span class="setting-value">gl</span> (Linux/Windows) o <span class="setting-value">metal</span> (macOS)</li>
+                    <li>Audio: <span class="setting-value">alsa</span> (Linux) / <span class="setting-value">xaudio2</span> (Windows)</li>
                 </ul>
             </div>
-        </li>
+        </div>
 
         <!-- Paso 3 -->
-        <li>
+        <div class="step-item">
+            <div class="step-number">03</div>
             <div class="step-content">
-                <h3 style="color: #ff0; margin: 0 0 1rem 0;">Tu Primer Núcleo</h3>
-                <ol class="sub-steps">
-                    <li>Abre <kbd>Main Menu ▸ Online Updater</kbd></li>
-                    <li>Selecciona <kbd>Core Downloader</kbd></li>
-                    <li>Elige una plataforma (ej: <em>Nintendo - SNES/SFC</em>)</li>
-                    <li>¡Descarga y comienza a jugar! 🎮</li>
+                <h3>Agregar Núcleos</h3>
+                <ol class="core-steps">
+                    <li>Abrir <span class="menu-path">Main Menu ▸ Online Updater</span></li>
+                    <li>Seleccionar <span class="menu-option">Core Downloader</span></li>
+                    <li>Buscar sistema: <span class="core-example">Nintendo - SNES / SFC</span></li>
+                    <li>¡Descargar y jugar! <span class="emoji">🎮</span></li>
                 </ol>
             </div>
-        </li>
-    </ol>
+        </div>
+    </div>
 </div>
         </article>
 
