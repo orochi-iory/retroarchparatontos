@@ -58,6 +58,7 @@ body {
     font-family: 'Courier New', monospace;
     line-height: 1.6;
     overflow-x: hidden;
+    counter-reset: section; /* Añadido para numeración jerárquica */
 }
 
 .container {
@@ -82,7 +83,6 @@ h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 
 /* ===== COMPONENTES PRINCIPALES ===== */
-/* Bloques de Advertencia */
 .warning {
     background: #220000;
     border: 2px dashed var(--neon-red);
@@ -99,7 +99,6 @@ h3 { font-size: 1.5rem; }
     font-size: 1.5rem;
 }
 
-/* Bloques de Código */
 pre {
     background: #002200;
     border: 1px dashed var(--neon-green);
@@ -109,7 +108,6 @@ pre {
     white-space: pre-wrap;
 }
 
-/* Tablas Retro */
 .retro-table {
     width: 100%;
     border-collapse: collapse;
@@ -129,7 +127,6 @@ pre {
     text-transform: uppercase;
 }
 
-/* Navegación */
 .nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -151,7 +148,6 @@ pre {
     transform: translateX(5px);
 }
 
-/* Listas */
 .retro-list {
     list-style: none;
     padding-left: 1.5rem;
@@ -163,13 +159,12 @@ pre {
 }
 
 .retro-list li::before {
-    content: "▹";
+    content: "\25B8"; /* Carácter Unicode más confiable */
     color: var(--neon-green);
     position: absolute;
     left: -1.5rem;
 }
 
-/* Pie de Página */
 .footer {
     margin-top: 3rem;
     padding: 1.5rem;
@@ -177,80 +172,145 @@ pre {
     text-align: center;
 }
 
-/* ===== SECCIÓN RETROARCH ===== */
-.retroarch-guide {
-    border: 3px double var(--neon-green);
-    padding: 2rem;
-    margin: 2rem 0;
-    background: rgba(0, 20, 0, 0.3);
-}
-
-.step-container {
-    margin-top: 1.5rem;
-}
-
-.step-item {
-    display: flex;
-    gap: 1.5rem;
+/* ===== ESTRUCTURA JERÁRQUICA ===== */
+.section {
+    counter-reset: subsection;
     margin: 2.5rem 0;
-    align-items: flex-start;
 }
 
-.step-number {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 255, 0, 0.1);
+.section-title {
+    counter-increment: section;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--neon-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-title::before {
+    content: counter(section) ". ";
+    color: var(--neon-yellow);
+}
+
+.subsection-title {
+    counter-increment: subsection;
+    font-size: 1.4rem;
+    margin: 1.2rem 0;
+}
+
+.subsection-title::before {
+    content: counter(section) "." counter(subsection) " ";
+    color: var(--neon-cyan);
+}
+
+/* ===== COMPONENTES UNIFICADOS ===== */
+.content-box {
+    background: rgba(0, 20, 0, 0.3);
     border: 2px solid var(--neon-green);
+    padding: 1.5rem;
+    margin: 1.2rem 0;
+    position: relative;
+    z-index: 1; /* Añadido para contexto de apilamiento */
+}
+
+.hierarchical-list {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.hierarchical-list li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.hierarchical-list li::before {
+    content: "\25B8";
+    position: absolute;
+    left: 0;
+    color: var(--neon-green);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: calc(100% - 20px);
+    background: var(--neon-green);
+    margin: 10px 0;
+}
+
+.timeline-item {
+    margin: 2rem 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.8rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--neon-green);
+    color: #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
     font-weight: bold;
-    text-shadow: 0 0 15px var(--neon-green);
 }
 
-.step-content {
-    flex-grow: 1;
-    padding: 1.2rem;
-    border-left: 3px solid var(--neon-green);
-    background: linear-gradient(to right, rgba(0, 255, 0, 0.05), transparent);
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
-.step-content h3 {
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--neon-green);
+}
+
+.stat-value {
+    font-size: 2rem;
     color: var(--neon-yellow);
-    margin-bottom: 1rem;
-    font-size: 1.3em;
     text-shadow: 0 0 10px var(--neon-yellow);
 }
 
-.code-block pre {
-    background: rgba(0, 30, 0, 0.4);
-    padding: 1.2rem;
-    border: 1px dashed var(--neon-green);
+.myth-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.config-list li,
-.core-steps li {
-    margin: 0.8rem 0;
-    padding-left: 1rem;
+.myth-card {
+    padding: 1.5rem;
+    border: 1px solid var(--neon-red);
+    background: rgba(64, 0, 0, 0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2); /* Añadido efecto glow */
 }
 
-.cli-command,
-.menu-path {
+.myth-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.myth-reality {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
     color: var(--neon-green);
-    font-family: 'Courier New', monospace;
-}
-
-.setting-value {
-    color: var(--neon-yellow);
-    font-weight: bold;
-}
-
-.core-example {
-    color: var(--neon-cyan);
-    font-style: italic;
 }
 
 /* ===== EFECTOS ESPECIALES ===== */
@@ -290,6 +350,14 @@ pre {
         border-top: 3px solid var(--neon-green);
         padding-left: 0;
         padding-top: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .myth-grid {
+        grid-template-columns: 1fr;
     }
 }
 
