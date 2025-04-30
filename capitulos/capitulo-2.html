@@ -158,17 +158,56 @@
         </footer>
     </div>
     <script>
-        // Efecto de sonido al pasar el ratón
-    const hoverSound = document.getElementById('hover-sound');
-    hoverSound.volume = 0.3; // Ajusta el volumen (0.1 a 1)
-    
-    document.querySelectorAll('.chapter-list a').forEach(link => {
+// Configuración del sistema de sonido
+const audioHandler = {
+    hoverSound: new Audio('/sfx/hover.wav'), // Ajusta la ruta según tu estructura
+    init: function() {
+        const link = document.getElementById('retro-link');
+        
+        // Efecto hover para desktop
         link.addEventListener('mouseenter', () => {
-            hoverSound.currentTime = 0; // Reinicia el sonido
-            hoverSound.play();
+            this.hoverSound.currentTime = 0;
+            this.hoverSound.play().catch(() => { /* Manejo de errores silencioso */ });
         });
+        
+        link.addEventListener('mouseleave', () => {
+            this.hoverSound.pause();
+        });
+
+        // Efecto táctil para móviles
+        let isTouching = false;
+        link.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            isTouching = true;
+            this.hoverSound.currentTime = 0;
+            this.hoverSound.play();
+        });
+        
+        link.addEventListener('touchend', () => {
+            if(isTouching) {
+                this.hoverSound.pause();
+                isTouching = false;
+            }
+        });
+    }
+};
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // Precargar el sonido
+    audioHandler.hoverSound.preload = 'auto';
+    
+    // Esperar a que el audio esté listo
+    audioHandler.hoverSound.addEventListener('canplaythrough', () => {
+        audioHandler.init();
     });
-      </script>
+    
+    // Manejo de errores
+    audioHandler.hoverSound.addEventListener('error', (e) => {
+        console.error('Error cargando hover.wav:', e);
+    });
+});
+</script>
 
 </body>
 </html>
