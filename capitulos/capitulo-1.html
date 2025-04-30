@@ -3,189 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 1 - ¿Qué es la emulación?</title>
+    <title>Capítulo 1: ¿Qué es la emulación? - Emulación para Torpes</title>
     <link rel="stylesheet" href="../css/retro.css">
     <audio id="hover-sound">
-        <source src="sfx/hover.wav" type="audio/wav">
-        <source src="sfx/hover.mp3" type="audio/mpeg">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
     </audio>
-    
+    <style>
+        .retro-article {
+            line-height: 1.6;
+            text-align: justify;
+        }
+        
+        .definition-box {
+            border: 2px dashed #0f0;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: rgba(0, 64, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 1: ¿Qué es la emulación?</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 1: ¿Qué es la emulación?</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel de Dificultad: 🟢 Básico</pre>
+            </div>
+        </header>
 
-        <!-- Sección 1.1 -->
-        <h2>1.1 La máquina del tiempo digital</h2>
-        <div class="warning">
-            <p>⚠️ <strong>Definición clave:</strong> Software que imita hardware antiguo</p>
-            <pre>
-┌──────────────┐   ┌───────────┐   ┌───────┐
-│  Dispositivo │ → │ Emulador  │ → │  ROM  │
-│  Moderno     │   │ (RetroArch│   │(Juego)│
-└──────────────┘   └───────────┘   └───────┘</pre>
+        <article class="retro-article mt-2">
+            <div class="definition-box">
+                <h2 class="glow-text">📖 Definición Técnica:</h2>
+                <p>La emulación es el proceso de recrear el hardware original de un sistema usando software, permitiendo ejecutar programas diseñados para otras arquitecturas.</p>
+            </div>
+
+            <h2 class="glow-text">🕹️ Componentes Clave:</h2>
+            <div class="retro-list">
+                <ul>
+                    <li><strong>Core/Núcleo:</strong> Cerebro del emulador que imita el hardware</li>
+                    <li><strong>BIOS:</strong> Firmware esencial para sistemas complejos</li>
+                    <li><strong>ROM:</strong> Copia digital del software original</li>
+                    <li><strong>Frontend:</strong> Interfaz de usuario (como RetroArch)</li>
+                </ul>
+            </div>
+
+            <h2 class="glow-text">⚖️ Aspectos Legales:</h2>
+            <div class="warning">
+                <pre>
+1. Solo es legal emular juegos que poseas físicamente
+2. El BIOS debe extraerse de tu propia consola
+3. Distribuir ROMs es ilegal sin permiso</pre>
+            </div>
+
+            <div class="pixel-border mt-2" style="padding: 1rem;">
+                <h3 class="glow-text">💡 Datos Curiosos:</h3>
+                <ul class="retro-list">
+                    <li>El primer emulador funcional (1965) fue para el IBM 7074</li>
+                    <li>La PlayStation 2 incluía hardware para emular PS1</li>
+                    <li>¡Algunos juegos modernos usan emulación interna!</li>
+                </ul>
+            </div>
+        </article>
+
+        <div class="nav-buttons mt-2">
+            <a href="../index.html" class="nav-button">« Volver al Índice</a>
+            <a href="capitulo-2.html" class="nav-button">Siguiente Capítulo »</a>
         </div>
 
-        <!-- Sección 1.2 -->
-        <h2>1.2 Componentes esenciales</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Elemento</th>
-                <th>Función</th>
-                <th>Ejemplo</th>
-            </tr>
-            <tr>
-                <td>🛠️ Emulador</td>
-                <td>Traduce instrucciones del hardware antiguo</td>
-                <td>RetroArch, Dolphin</td>
-            </tr>
-            <tr>
-                <td>💾 ROM</td>
-                <td>Copia digital del juego original</td>
-                <td>SuperMarioWorld.sfc</td>
-            </tr>
-            <tr>
-                <td>🔐 BIOS</td>
-                <td>Firmware de la consola original</td>
-                <td>SCPH1001.bin (PS1)</td>
-            </tr>
-        </table>
-
-        <!-- Sección 1.3 -->
-        <h2>1.3 Mitos comunes</h2>
-        <div class="retro-list">
-            <ul>
-                <li>🚫 "La emulación es ilegal" → ✅ Los emuladores son legales</li>
-                <li>🚫 "Solo para expertos" → ✅ RetroArch simplifica el proceso</li>
-                <li>🚫 "Pierde calidad original" → ✅ Shaders mejoran la experiencia</li>
-            </ul>
-        </div>
-
-        <!-- Sección 1.4 -->
-        <h2>1.4 Ventajas de RetroArch</h2>
-        <pre class="pixel-border">
-✔️ Interfaz unificada
-✔️ +50 sistemas compatibles
-✔️ Cross-platform (Windows/Mac/Linux/Android)
-✔️ Mejoras gráficas (shaders CRT, HD)
-✔️ Sistema de guardado avanzado</pre>
-
-        <!-- Sección 1.5 -->
-        <h2>1.5 Primeros pasos prácticos</h2>
-        <div class="warning">
-            <p>⚙️ <strong>Ejemplo SNES:</strong></p>
-            <pre>
-1. Descargar RetroArch
-2. Instalar core "bsnes"
-3. Buscar ROM .sfc
-4. ¡Jugar con autenticidad CRT!</pre>
-            <p>🎮 <strong>Requisitos mínimos:</strong> CPU dual-core, 2GB RAM</p>
-        </div>
-
-        <!-- Sección 1.6 -->
-        <h2>1.6 Preguntas Frecuentes</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Pregunta</th>
-                <th>Respuesta</th>
-            </tr>
-            <tr>
-                <td>¿Es legal usar BIOS?</td>
-                <td>Solo si lo extraes de tu consola</td>
-            </tr>
-            <tr>
-                <td>¿Necesito PC potente?</td>
-                <td>Depende del sistema a emular</td>
-            </tr>
-            <tr>
-                <td>¿Dónde conseguir ROMs?</td>
-                <td>Solo de juegos que poseas físicamente</td>
-            </tr>
-        </table>
-
-        <!-- Navegación -->
-        <div class="nav-buttons">
-            <a href="../index.html" class="nav-button">« Índice Principal</a>
-            <a href="capitulo-2.html" class="nav-button">Capítulo 2 »</a>
-        </div>
-
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡El viaje retro comienza! 🕹️✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¿Encontraste errores? <a href="https://github.com/orochi-iory/retroarchparatontos" 
+                   style="color:#0f0;text-decoration:none;">¡Contribuye en GitHub!</a></pre>
+            </div>
         </footer>
     </div>
-    <!-- Scripts unificados -->
+
+    <!-- Scripts Unificados -->
     <script>
         // Efecto CRT
-        setInterval(() => {
-            const flicker = Math.random() * 0.15;
-            document.querySelector('.container').style.opacity = 1 - flicker;
-        }, 100);
+        const crtEffect = setInterval(() => {
+            document.querySelector('.container').style.opacity = 
+                0.95 + (Math.random() * 0.05);
+        }, 50);
 
-        // Sistema de audio mejorado
+        // Sistema de Audio
         document.addEventListener('DOMContentLoaded', () => {
-            const audio = {
+            const audioSystem = {
                 hover: document.getElementById('hover-sound'),
                 enabled: false,
                 
                 init() {
                     this.hover.volume = 0.4;
-                    this.setupEventListeners();
-                    this.addDebugInfo();
+                    this.setupListeners();
                 },
 
-                setupEventListeners() {
+                setupListeners() {
                     // Activación con primer clic
-                    const enableAudio = () => {
+                    const enable = () => {
                         this.enabled = true;
-                        document.body.classList.add('audio-enabled');
-                        console.log('Audio habilitado');
+                        document.body.classList.add('audio-active');
                     };
+                    
+                    window.addEventListener('click', enable, { once: true });
+                    window.addEventListener('touchstart', enable, { once: true });
 
-                    window.addEventListener('click', enableAudio, { once: true });
-                    window.addEventListener('touchstart', enableAudio, { once: true });
-
-                    // Sonido al pasar el ratón
+                    // Sonido en enlaces
                     document.body.addEventListener('mouseover', (e) => {
                         if (this.enabled && e.target.closest('a')) {
-                            this.playHoverSound();
+                            this.playHover();
                         }
                     });
-
-                    // Sonido en móviles
-                    document.body.addEventListener('touchstart', (e) => {
-                        if (this.enabled && e.target.closest('a')) {
-                            this.playHoverSound();
-                        }
-                    }, { passive: true });
                 },
 
-                playHoverSound() {
+                playHover() {
                     try {
                         this.hover.currentTime = 0;
                         this.hover.play();
-                        console.log('Sonido reproducido');
-                    } catch (error) {
+                    } catch(error) {
                         console.error('Error de audio:', error);
                     }
-                },
-
-                addDebugInfo() {
-                    console.log('Estado del sistema de audio:', {
-                        hoverSound: {
-                            src: this.hover.currentSrc,
-                            readyState: this.hover.readyState,
-                            volume: this.hover.volume
-                        },
-                        audioEnabled: this.enabled
-                    });
                 }
             };
-
-            audio.init();
+            
+            audioSystem.init();
         });
     </script>
 </body>
