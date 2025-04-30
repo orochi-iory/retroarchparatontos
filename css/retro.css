@@ -1,6 +1,6 @@
-/* retro.css - Estilo CRT Retro para "Emulación para Torpes" */
+/* retro.css - Tema CRT Retro para "Emulación para Torpes" */
 
-/* ===== RESET Y ESTILOS GLOBALES ===== */
+/* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@
     --neon-green: #00ff00;
     --neon-yellow: #ffff00;
     --neon-red: #ff0000;
+    --neon-cyan: #00ffff;
     --crt-bg: #000;
     --scanline: rgba(0, 255, 0, 0.05);
     --glow: 0 0 10px;
@@ -50,14 +51,13 @@
     100% { opacity: 0.98; }
 }
 
-/* ===== ESTRUCTURA PRINCIPAL ===== */
+/* ===== ESTRUCTURA BASE ===== */
 body {
     background: var(--crt-bg);
     color: var(--neon-green);
     font-family: 'Courier New', monospace;
     line-height: 1.6;
     overflow-x: hidden;
-    position: relative;
 }
 
 .container {
@@ -81,7 +81,8 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 
-/* ===== COMPONENTES ESPECÍFICOS ===== */
+/* ===== COMPONENTES PRINCIPALES ===== */
+/* Bloques de Advertencia */
 .warning {
     background: #220000;
     border: 2px dashed var(--neon-red);
@@ -98,6 +99,7 @@ h3 { font-size: 1.5rem; }
     font-size: 1.5rem;
 }
 
+/* Bloques de Código */
 pre {
     background: #002200;
     border: 1px dashed var(--neon-green);
@@ -105,9 +107,9 @@ pre {
     margin: 1rem 0;
     overflow-x: auto;
     white-space: pre-wrap;
-    word-wrap: break-word;
 }
 
+/* Tablas Retro */
 .retro-table {
     width: 100%;
     border-collapse: collapse;
@@ -127,6 +129,7 @@ pre {
     text-transform: uppercase;
 }
 
+/* Navegación */
 .nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -148,6 +151,7 @@ pre {
     transform: translateX(5px);
 }
 
+/* Listas */
 .retro-list {
     list-style: none;
     padding-left: 1.5rem;
@@ -165,11 +169,88 @@ pre {
     left: -1.5rem;
 }
 
+/* Pie de Página */
 .footer {
     margin-top: 3rem;
     padding: 1.5rem;
     border-top: 2px dashed var(--neon-green);
     text-align: center;
+}
+
+/* ===== SECCIÓN RETROARCH ===== */
+.retroarch-guide {
+    border: 3px double var(--neon-green);
+    padding: 2rem;
+    margin: 2rem 0;
+    background: rgba(0, 20, 0, 0.3);
+}
+
+.step-container {
+    margin-top: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    align-items: flex-start;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid var(--neon-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px var(--neon-green);
+}
+
+.step-content {
+    flex-grow: 1;
+    padding: 1.2rem;
+    border-left: 3px solid var(--neon-green);
+    background: linear-gradient(to right, rgba(0, 255, 0, 0.05), transparent);
+}
+
+.step-content h3 {
+    color: var(--neon-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+    text-shadow: 0 0 10px var(--neon-yellow);
+}
+
+.code-block pre {
+    background: rgba(0, 30, 0, 0.4);
+    padding: 1.2rem;
+    border: 1px dashed var(--neon-green);
+}
+
+.config-list li,
+.core-steps li {
+    margin: 0.8rem 0;
+    padding-left: 1rem;
+}
+
+.cli-command,
+.menu-path {
+    color: var(--neon-green);
+    font-family: 'Courier New', monospace;
+}
+
+.setting-value {
+    color: var(--neon-yellow);
+    font-weight: bold;
+}
+
+.core-example {
+    color: var(--neon-cyan);
+    font-style: italic;
 }
 
 /* ===== EFECTOS ESPECIALES ===== */
@@ -187,68 +268,34 @@ pre {
     .container {
         padding: 10px;
     }
-    
-    a {
-        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text x="5" y="18" font-family="Courier New" font-size="16" fill="%230f0">▶</text></svg>'), auto;
-        position: relative;
-        transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
 
-    a:hover {
-        text-shadow: 0 0 8px #0f0;
-        filter: drop-shadow(0 0 2px #0f0);
-    }
-
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    
     .nav-buttons {
         flex-direction: column;
         gap: 1rem;
     }
-}
 
-/* ===== SECCIÓN RETROARCH-STEPS ===== */
-.retroarch-steps {
-    border: 3px double #0f0;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    counter-reset: step-counter;
-    position: relative;
-    overflow: hidden;
-}
+    .step-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-.retroarch-steps li {
-    margin: 2rem 0;
-    position: relative;
-    padding-left: 5rem;
-    min-height: 50px;
-}
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 
-.retroarch-steps li::before {
-    counter-increment: step-counter;
-    content: "Paso " counter(step-counter);
-    position: absolute;
-    left: 0;
-    width: 4.5rem;
-    color: #0f0;
-    font-weight: bold;
-    text-shadow: 0 0 8px #0f0;
-    background: rgba(0, 32, 0, 0.4);
-    padding: 0.3rem 0.8rem;
-    border-radius: 3px;
-    border: 1px solid #0f0;
-}
-
-.step-content {
-    margin-left: 1rem;
-    padding: 0.8rem;
-    background: rgba(0, 16, 0, 0.2);
-    border-left: 3px solid #0f0;
+    .step-content {
+        border-left: none;
+        border-top: 3px solid var(--neon-green);
+        padding-left: 0;
+        padding-top: 1rem;
+    }
 }
 
 /* ===== UTILIDADES ===== */
 .text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
 .mb-2 { margin-bottom: 2rem; }
 .pixel-border { border: 2px solid var(--neon-green); }
