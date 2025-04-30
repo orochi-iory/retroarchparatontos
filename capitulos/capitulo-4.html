@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4 - Controladores</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 4: Dominando los Mandos</h1>
+
+        <!-- 4.1 Tipos de Controladores -->
+        <h2>4.1 Universo de Controladores</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Tipo</th>
+                <th>Ejemplos</th>
+                <th>Compatibilidad</th>
+            </tr>
+            <tr>
+                <td>🎮 Modernos</td>
+                <td>Xbox Series X|S, PS5 DualSense</td>
+                <td>Plug & Play</td>
+            </tr>
+            <tr>
+                <td>🕹️ Retro</td>
+                <td>SNES USB, Arcade Sticks</td>
+                <td>Requieren configuración</td>
+            </tr>
+            <tr>
+                <td>📱 Táctiles</td>
+                <td>Pantallas móviles</td>
+                <td>Auto-detec. en Android/iOS</td>
+            </tr>
+        </table>
+
+        <!-- 4.2 Configuración de Mandos Modernos -->
+        <h2>4.2 Configuración Paso a Paso</h2>
+        <div class="warning">
+            <pre>
+1. Conectar mando vía USB/Bluetooth
+2. Ir a: Settings → Input → Port 1 Controls
+3. Seleccionar "Autoconfiguración"
+4. Probar todos los botones
+5. Guardar perfil → MiMandoXbox.cfg</pre>
+        </div>
+        <p>💡 <em>Usar <strong>Input Poll Type</strong> = Early para menos latencia</em></p>
+
+        <!-- 4.3 Mandos Genéricos -->
+        <h2>4.3 Solución para Mandos No-Reconocidos</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Identificar el mando con <a href="https://gamepad-tester.com" target="_blank">Gamepad Tester</a></li>
+                <li>Mapeo manual en <code>Settings → Input → Manual Mapping</code></li>
+                <li>Usar <strong>x360ce</strong> para emular Xbox 360</li>
+            </ul>
+        </div>
+
+        <!-- 4.4 Teclado -->
+        <h2>4.4 Configuración Profesional de Teclado</h2>
+        <pre>
+Settings → Input → Port 1 Binds
+   ↑ → W
+   ↓ → S
+   ← → A
+   → → D
+   A → K
+   B → L
+   Guardar como Perfil WASD</pre>
+
+        <!-- 4.5 Pantalla Táctil -->
+        <h2>4.5 Optimización Móvil</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Ajuste</th>
+                <th>Valor Ideal</th>
+                <th>Efecto</th>
+            </tr>
+            <tr>
+                <td>Opacidad</td>
+                <td>60%</td>
+                <td>Mejor visibilidad</td>
+            </tr>
+            <tr>
+                <td>Tamaño Botones</td>
+                <td>120%</td>
+                <td>Precisión táctil</td>
+            </tr>
+            <tr>
+                <td>Vibración</td>
+                <td>Desactivado</td>
+                <td>Ahorro de batería</td>
+            </tr>
+        </table>
+
+        <!-- 4.6 Problemas Comunes -->
+        <h2>4.6 La Clínica del Mando</h2>
+        <div class="warning">
+            <table class="retro-table">
+                <tr>
+                    <th>Síntoma</th>
+                    <th>Diagnóstico</th>
+                    <th>Solución</th>
+                </tr>
+                <tr>
+                    <td>Botones invertidos</td>
+                    <td>Mapeo incorrecto</td>
+                    <td>Reasignar manualmente</td>
+                </tr>
+                <tr>
+                    <td>Input Lag</td>
+                    <td>Latencia alta</td>
+                    <td>Activar Threaded Video</td>
+                </tr>
+                <tr>
+                    <td>Vibración fantasma</td>
+                    <td>Driver corrupto</td>
+                    <td>Reinstalar drivers</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-3.html" class="nav-button">« Capítulo 3</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-5.html" class="nav-button">Capítulo 5 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Controles configurados con éxito! 🎮✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Pro Tip: Usa "Input Auto-Detect Interval" para switches múltiples</pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

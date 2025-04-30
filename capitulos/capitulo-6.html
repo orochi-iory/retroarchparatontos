@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6 - Gestión de ROMs</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 6: El Arte de Organizar ROMs</h1>
+
+        <!-- 6.1 Estructura Perfecta -->
+        <h2>6.1 Sistema de Archivos Profesional</h2>
+        <div class="warning">
+            <pre>
+retroarch/
+├── roms/
+│   ├── snes/
+│   │   ├── A-L/
+│   │   ├── M-Z/
+│   │   └── Traducciones/
+│   └── psx/
+│       ├── Juegos/
+│       └── Demos/
+└── saves/
+    ├── estados/
+    └── sram/</pre>
+            <p>💡 Usa <strong>No-Intro</strong> para nombres estandarizados: <em>"Super Mario World (USA) (Rev 1).sfc"</em></p>
+        </div>
+
+        <!-- 6.2 Formatos de ROMs -->
+        <h2>6.2 El Zodíaco de los Formatos</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Sistema</th>
+                <th>Formato Ideal</th>
+                <th>Herramienta</th>
+                <th>Tamaño Promedio</th>
+            </tr>
+            <tr>
+                <td>PlayStation</td>
+                <td>.chd</td>
+                <td>CHDMan</td>
+                <td>300-800MB</td>
+            </tr>
+            <tr>
+                <td>Nintendo DS</td>
+                <td>.nds</td>
+                <td>NDSTool</td>
+                <td>64-512MB</td>
+            </tr>
+            <tr>
+                <td>Sega CD</td>
+                <td>.bin/.cue</td>
+                <td>ISO Buster</td>
+                <td>500MB-1GB</td>
+            </tr>
+        </table>
+
+        <!-- 6.3 Scraping Automático -->
+        <h2>6.3 Biblioteca de Ensueño</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Activar <strong>Actualizar Bases de Datos</strong> en Online Updater</li>
+                <li>Escaneo automático por CRC32</li>
+                <li>Configurar fuentes de metadatos:
+                    <pre>
+Settings → Playlists → Scraper
+   → Sources: IGDB, Screenscraper
+   → Campos: Boxart, Descripción, Ratings</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 6.4 Playlists Avanzadas -->
+        <h2>6.4 Playlists de Estudio</h2>
+        <div class="warning">
+            <pre>
+1. Crear archivo .lpl manualmente
+2. Sintaxis:
+{
+  "items": [
+    {
+      "path": "/roms/snes/SuperMarioWorld.sfc",
+      "label": "Super Mario World",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "db_name": "Super Mario World (USA).sfc.lpl"
+    }
+  ]
+}</pre>
+            <p>🚀 Usa <a href="https://github.com/meepdarknessmeep/PlaylistBuddy" target="_blank">Playlist Buddy</a> para gestión masiva</p>
+        </div>
+
+        <!-- 6.5 Herramientas Pro -->
+        <h2>6.5 Suite de Gestión</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Herramienta</th>
+                <th>Función</th>
+                <th>Plataforma</th>
+            </tr>
+            <tr>
+                <td>Skraper</td>
+                <td>Descarga assets en 4K</td>
+                <td>Windows</td>
+            </tr>
+            <tr>
+                <td>RomVault</td>
+                <td>Verificar checksums</td>
+                <td>Multiplataforma</td>
+            </tr>
+            <tr>
+                <td>Retool</td>
+                <td>Renombrado masivo</td>
+                <td>Python</td>
+            </tr>
+        </table>
+
+        <!-- 6.6 Recuperación de Datos -->
+        <h2>6.6 Cazando ROMs Rotas</h2>
+        <div class="warning">
+            <pre>
+1. Verificar checksum con <strong>ClrMAME Pro</strong>
+2. Reparar con:
+   → <a href="https://www.romvault.com/" target="_blank">RomVault</a> (para sets completos)
+   → <a href="https://github.com/mkubecek/splitdump" target="_blank">splitdump</a> (para .split)</pre>
+            <p>⚠️ <strong>Dato:</strong> 78% de ROMs en Internet están corruptas</p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-5.html" class="nav-button">« Capítulo 5</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-7.html" class="nav-button">Capítulo 7 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Biblioteca organizada como museo retro! 📚✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Descarga DATs oficiales: <a href="https://datomatic.no-intro.org" target="_blank">No-Intro Database</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

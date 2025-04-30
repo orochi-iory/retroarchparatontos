@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus: Proyecto Raspberry Pi</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Bonus: El Santo Grial Retro</h1>
+
+        <!-- Hardware -->
+        <h2>Requisitos del Sistema</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Modelo</th>
+                <th>Consolas</th>
+                <th>Precio</th>
+                <th>Notas</th>
+            </tr>
+            <tr>
+                <td>Pi 5 4GB</td>
+                <td>Hasta Dreamcast</td>
+                <td>$80</td>
+                <td>Ventilación activa necesaria</td>
+            </tr>
+            <tr>
+                <td>Pi 4 8GB</td>
+                <td>Hasta PSP</td>
+                <td>$120</td>
+                <td>Overclock a 2.2GHz</td>
+            </tr>
+        </table>
+
+        <!-- SO -->
+        <h2>Elección del Sistema Operativo</h2>
+        <div class="retro-list">
+            <ul>
+                <li>📀 RetroPie: Todo-en-uno (recomendado)</li>
+                <li>📀 Lakka: Interfaz unificada RetroArch</li>
+                <li>📀 Batocera: Para setups TV</li>
+            </ul>
+        </div>
+        <pre class="mt-1">
+# Instalación RetroPie
+sudo apt install git lsb-release
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+cd RetroPie-Setup
+sudo ./retropie_setup.sh</pre>
+
+        <!-- Optimización -->
+        <h2>Trucos de Rendimiento</h2>
+        <div class="warning">
+            <h3>Overclock Seguro (Pi 4):</h3>
+            <pre>
+# /boot/config.txt
+over_voltage=2
+arm_freq=1500
+gpu_freq=600</pre>
+            <p>🌡️ Mantener temperatura < 70°C</p>
+        </div>
+
+        <!-- Proyectos DIY -->
+        <h2>Proyectos Épicos</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Proyecto</th>
+                <th>Costo</th>
+                <th>Dificultad</th>
+                <th>Requisitos</th>
+            </tr>
+            <tr>
+                <td>Portátil Game Boy</td>
+                <td>$150</td>
+                <td>🔥🔥🔥</td>
+                <td>Pantalla 3.5", batería 5000mAh</td>
+            </tr>
+            <tr>
+                <td>Arcade Mini</td>
+                <td>$200</td>
+                <td>🔥🔥</td>
+                <td>Kit de botones USB</td>
+            </tr>
+        </table>
+
+        <!-- Problemas Comunes -->
+        <h2>Clínica Pi</h2>
+        <div class="retro-list">
+            <ul>
+                <li>🔌 Sin audio HDMI:
+                    <pre>sudo raspi-config → Audio → HDMI</pre>
+                </li>
+                <li>🎮 Mandos no detectados:
+                    <pre>sudo nano /etc/modules → añadir uinput</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-10.html" class="nav-button">« Capítulo 10</a>
+            <a href="../index.html" class="nav-button">-- Índice Principal --</a>
+	    <a href="capitulo-12.html" class="nav-button">« Capítulo Final</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Convierte tu Pi en una máquina del tiempo! ⏳✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Comunidad Pi: <a href="https://retropie.org.uk/forum/" target="_blank">Foro RetroPie</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

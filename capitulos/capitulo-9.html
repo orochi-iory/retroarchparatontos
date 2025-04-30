@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9 - Streaming & Grabación</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 9: Conviértete en Estrella Retro</h1>
+
+        <!-- 9.1 Configuración Básica -->
+        <h2>9.1 Estudio de Transmisión</h2>
+        <div class="warning">
+            <pre>
+Requisitos Mínimos:
+→ CPU: 4 núcleos / 8 hilos
+→ GPU: NVENC o AMF compatible
+→ RAM: 8GB (16GB para 4K)
+→ Ancho de Banda: 10Mbps upload</pre>
+        </div>
+
+        <!-- 9.2 Flujo de Trabajo -->
+        <h2>9.2 Configuración OBS Profesional</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Plataforma</th>
+                <th>Resolución</th>
+                <th>Bitrate</th>
+                <th>Preset</th>
+            </tr>
+            <tr>
+                <td>Twitch</td>
+                <td>936p (1664×936)</td>
+                <td>6000 Kbps</td>
+                <td>NVENC (Calidad)</td>
+            </tr>
+            <tr>
+                <td>YouTube</td>
+                <td>1440p (2560×1440)</td>
+                <td>12000 Kbps</td>
+                <td>CRF 18 (Slow)</td>
+            </tr>
+        </table>
+
+        <!-- 9.3 Integración RetroArch -->
+        <h2>9.3 Magia de RetroArch</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Streaming nativo:
+                    <pre>Settings → Streaming → Twitch/YouTube Keys</pre>
+                </li>
+                <li>Captura directa:
+                    <pre>FFmpeg params: -c:v libx264 -preset ultrafast</pre>
+                </li>
+                <li>Overlays retro:
+                    <pre>Usar .png con canal alpha → 30% opacidad</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 9.4 Hardware Específico -->
+        <h2>9.4 Configuraciones de Élite</h2>
+        <div class="warning">
+            <h3>🎮 Steam Deck:</h3>
+            <pre>
+OBS → Sources → Game Capture → RetroArch (Vulkan)
+→ Bitrate: 4000 Kbps (H.265)
+→ Resolución: 1280×800 (nativa)</pre>
+
+            <h3>📱 Android:</h3>
+            <pre>
+Larix Broadcaster + Screen Capture
+→ Codec: HEVC @ 5Mbps
+→ Audio: AAC 192kbps</pre>
+        </div>
+
+        <!-- 9.5 Edición Profesional -->
+        <h2>9.5 Postproducción Maestra</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Software</th>
+                <th>Uso</th>
+                <th>Ventaja Clave</th>
+            </tr>
+            <tr>
+                <td>DaVinci Resolve</td>
+                <td>Corrección color CRT</td>
+                <td>Nodos 16-bit</td>
+            </tr>
+            <tr>
+                <td>HandBrake</td>
+                <td>Compresión eficiente</td>
+                <td>Preset Retro (AV1)</td>
+            </tr>
+            <tr>
+                <td>Audacity</td>
+                <td>Mezcla audio chiptune</td>
+                <td>Filtro Low-pass 15kHz</td>
+            </tr>
+        </table>
+
+        <!-- 9.6 Legalidad y Ética -->
+        <h2>9.6 Reglas del Juego</h2>
+        <div class="warning retro-list">
+            <ul>
+                <li>⚠️ Evitar música con copyright (usar <a href="https://modarchive.org" target="_blank">MOD</a>)</li>
+                <li>📜 Añadir disclaimer "Juego propiedad de [Compañía]"</li>
+                <li>🔒 No exponer claves de API en streams</li>
+            </ul>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-8.html" class="nav-button">« Capítulo 8</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-10.html" class="nav-button">Capítulo 10 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Luces, cámara, emulación! 🎥✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Plantillas OBS: <a href="https://retrostreamdesigns.com" target="_blank">Retro Overlay Pack</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

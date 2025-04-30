@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusión - Viaje Completo</title>
+    <link rel="stylesheet" href="../css/retro.css">
+    <audio id="ending-music" src="../sfx/ending.wav" loop></audio>
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo Final: ¡Eres un Maestro Retro!</h1>
+	¡clica en cualquier sitio para oir la musica!
+
+        <!-- Sección 1: Resumen -->
+        <h2>🕹️ Lo que has conquistado:</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Dominio total de RetroArch en 11 plataformas diferentes</li>
+                <li>Habilidades para resucitar hardware clásico con Raspberry Pi</li>
+                <li>Conocimiento para transmitir partidas como un profesional</li>
+                <li>Capacidad para solucionar cualquier problema técnico</li>
+            </ul>
+        </div>
+
+        <!-- Sección 2: Comunidad -->
+        <h2>🌐 Únete a la Comunidad</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Plataforma</th>
+                <th>Enlace</th>
+                <th>Foco</th>
+            </tr>
+            <tr>
+                <td>Reddit</td>
+                <td><a href="https://reddit.com/r/emulation">r/emulation</a></td>
+                <td>Discusiones técnicas</td>
+            </tr>
+            <tr>
+                <td>Discord</td>
+                <td><a href="https://discord.gg/libretro">Libretro Server</a></td>
+                <td>Soporte en tiempo real</td>
+            </tr>
+            <tr>
+                <td>GitHub</td>
+                <td><a href="https://github.com/libretro">Repos Libretro</a></td>
+                <td>Contribuciones de código</td>
+            </tr>
+        </table>
+
+        <!-- Sección 3: Próximos pasos -->
+        <h2>🚀 Tu Misión Ahora:</h2>
+        <div class="warning">
+            <pre>
+1. Crea tu máquina arcade personalizada
+2. Digitaliza tu colección física de juegos
+3. Enseña a otros lo que has aprendido
+4. ¡Comparte tus creaciones con #EmulaciónParaTorpes!</pre>
+        </div>
+
+        <!-- Sección 4: Agradecimientos -->
+        <h2>🙏 Créditos Especiales</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Equipo de RetroArch/Libretro - Por su increíble herramienta</li>
+                <li>Comunidad de preservación digital - Guardianes de la historia</li>
+                <li>DeepSeek-R1 - Asistente de IA en la creación de este libro</li>
+                <li>Tú - Por llevar la antorcha retro al futuro</li>
+            </ul>
+        </div>
+
+        <!-- Encuesta Interactiva -->
+        <h2>📊 ¿Qué harás ahora?</h2>
+        <div class="pixel-border" style="padding: 1rem;">
+            <form id="encuesta">
+                <label>
+                    <input type="radio" name="proximo-paso" value="build"> Construir máquina arcade
+                </label><br>
+                <label>
+                    <input type="radio" name="proximo-paso" value="stream"> Empezar a transmitir
+                </label><br>
+                <label>
+                    <input type="radio" name="proximo-paso" value="learn"> Profundizar en desarrollo
+                </label><br>
+                <button type="button" onclick="alert('¡Tu viaje continúa! 🚀')">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Navegación Final -->
+        <div class="nav-buttons">
+            <a href="capitulo-11.html" class="nav-button">« Capítulo Bonus</a>
+            <a href="../index.html" class="nav-button">Volver al Índice »</a>
+        </div>
+
+        <!-- Footer Especial -->
+       	<footer class="footer mt-2">
+    <p class="glow-text">"El futuro retro está en tus manos" - orochi_iory 🕹️</p>
+    <div class="pixel-border mt-1" style="padding: 5px;">
+        <pre>¿Encontraste errores? ¡Contribuye! <a href="https://github.com/tuusuario/emulacion-para-torpes" style="color:#0f0">GitHub</a></pre>
+        <p style="margin-top: 10px; color: #0f0; font-size: 0.8em;">
+            Música final: "8 Bit Nostalgia" de David Renda<br>
+            <a href="https://www.fesliyanstudios.com/royalty-free-music/download/8-bit-nostalgia/2289" 
+               target="_blank" 
+               style="color: #0f0; text-decoration: underline;">
+               Descargar en Fesliyan Studios
+            </a>
+        </p>
+    </div>
+</footer>
+    </div>
+
+    <!-- Efecto Especial de Despedida -->
+    <script>
+        // Efecto de texto parpadeante al final
+        const footerText = document.querySelector('.footer p');
+        setInterval(() => {
+            footerText.style.visibility = (footerText.style.visibility == 'hidden' ? '' : 'hidden');
+        }, 1000);
+	// Iniciar música de créditos
+    const bgMusic = document.getElementById('ending-music');
+bgMusic.volume = 0.3;
+    window.onload = () => bgMusic.play();
+	document.body.addEventListener('click', () => {
+    bgMusic.play();
+});
+    </script>
+</body>
+</html>

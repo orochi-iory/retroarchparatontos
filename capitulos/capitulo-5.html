@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5 - Núcleos de Emulación</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 5: El Corazón de RetroArch</h1>
+
+        <!-- 5.1 Qué son los núcleos -->
+        <h2>5.1 Anatomía de un Núcleo</h2>
+        <div class="warning">
+            <p>💾 <strong>Definición:</strong> Ejecutables que contienen todo el hardware virtual necesario para emular un sistema</p>
+            <pre>
+┌──────────────────┐
+│  Núcleo          │
+│  ├ CPU Emulada   │
+│  ├ Chip de Audio │
+│  └ GPU Virtual   │
+└──────────────────┘</pre>
+        </div>
+
+        <!-- 5.2 Instalación de Núcleos -->
+        <h2>5.2 Descarga e Instalación</h2>
+        <pre>
+1. Menú Principal → Cargar Núcleo → Descargar Núcleo
+2. Buscar por sistema o nombre:
+   - Nintendo (SNES) → bsnes
+   - Sony (PS1) → Beetle PSX HW
+3. Instalación automática en:
+   <em>/retroarch/cores</em></pre>
+        <p>💡 Usa <strong>Online Updater → Actualizar Núcleos</strong> para mantenerlos al día</p>
+
+        <!-- 5.3 Núcleos Recomendados -->
+        <h2>5.3 Selección de Élite</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Sistema</th>
+                <th>Núcleo</th>
+                <th>Foco</th>
+                <th>Requisitos</th>
+            </tr>
+            <tr>
+                <td>SNES</td>
+                <td>bsnes</td>
+                <td>Precisión 100%</td>
+                <td>CPU 4 núcleos</td>
+            </tr>
+            <tr>
+                <td>PS1</td>
+                <td>Beetle PSX HW</td>
+                <td>Gráficos HD</td>
+                <td>GPU Vulkan</td>
+            </tr>
+            <tr>
+                <td>N64</td>
+                <td>Mupen64Plus-Next</td>
+                <td>Compatibilidad</td>
+                <td>OpenGL 3.3+</td>
+            </tr>
+        </table>
+
+        <!-- 5.4 Configuración Avanzada -->
+        <h2>5.4 Ajustes Específicos por Núcleo</h2>
+        <div class="retro-list">
+            <ul>
+                <li>🎮 Beetle PSX HW → Aumentar resolución interna a 8x</li>
+                <li>🖥️ bsnes → Activar "HD Mode 7" para efectos 3D</li>
+                <li>💾 mGBA → Overclock al 200% para juegos lentos</li>
+            </ul>
+        </div>
+        <div class="warning mt-1">
+            <pre>
+Quick Menu → Opciones
+   → Buscar parámetros específicos del núcleo
+   → Guardar como Override de Núcleo</pre>
+        </div>
+
+        <!-- 5.5 Resolución de Problemas -->
+        <h2>5.5 La Sala de Emergencias</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Error</th>
+                <th>Causa</th>
+                <th>Solución</th>
+            </tr>
+            <tr>
+                <td>❌ No carga ROM</td>
+                <td>Formato incompatible</td>
+                <td>Convertir a .chd/.cue</td>
+            </tr>
+            <tr>
+                <td>💥 Crash al iniciar</td>
+                <td>BIOS faltante</td>
+                <td>Colocar en /retroarch/system</td>
+            </tr>
+            <tr>
+                <td>🐌 Rendimiento pobre</td>
+                <td>Núcleo muy demandante</td>
+                <td>Usar versión ligera (Ej: Snes9x)</td>
+            </tr>
+        </table>
+
+        <!-- 5.6 FAQ -->
+        <h2>5.6 Preguntas de la Comunidad</h2>
+        <div class="warning">
+            <p><strong>❓ ¿Son legales los núcleos?</strong><br>
+            ✅ Sí, son código abierto. Solo necesitas ROMs/BIOS legales.</p>
+            
+            <p><strong>❓ ¿Puedo usar múltiples núcleos para un sistema?</strong><br>
+            ✅ Sí, prueba diferentes núcleos para comparar rendimiento.</p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-4.html" class="nav-button">« Capítulo 4</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-6.html" class="nav-button">Capítulo 6 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Núcleos configurados con precisión! ⚛️✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Descarga núcleos experimentales: <a href="https://buildbot.libretro.com/nightly/" target="_blank">Nightly Builds</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

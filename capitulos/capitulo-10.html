@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10 - Solución de Problemas</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 10: El Hospital Retro</h1>
+
+        <!-- 10.1 Diagnóstico Rápido -->
+        <h2>10.1 Síntomas y Soluciones</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Síntoma</th>
+                <th>Diagnóstico</th>
+                <th>Solución</th>
+                <th>Urgencia</th>
+            </tr>
+            <tr>
+                <td>🖥️ Pantalla negra</td>
+                <td>Driver de video incorrecto</td>
+                <td>Cambiar a Vulkan/GL</td>
+                <td>🔥🔥🔥</td>
+            </tr>
+            <tr>
+                <td>🎧 Audio entrecortado</td>
+                <td>Buffer demasiado bajo</td>
+                <td>Aumentar a 128ms</td>
+                <td>🔥🔥</td>
+            </tr>
+            <tr>
+                <td>🎮 Input lag</td>
+                <td>VSync + Threaded Video OFF</td>
+                <td>Activar Run-Ahead</td>
+                <td>🔥🔥🔥</td>
+            </tr>
+        </table>
+
+        <!-- 10.2 Logs de Error -->
+        <h2>10.2 Análisis Forense</h2>
+        <div class="warning">
+            <pre>
+Ubicación logs:
+→ Windows: <em>retroarch/logs/retroarch.log</em>
+→ Linux: <em>~/.config/retroarch/logs</em>
+
+Comandos útiles:
+grep "error" retroarch.log
+tail -f retroarch.log (monitoreo en tiempo real)</pre>
+        </div>
+
+        <!-- 10.3 Problemas de Núcleos -->
+        <h2>10.3 La UCI de los Núcleos</h2>
+        <div class="retro-list">
+            <ul>
+                <li>🔄 Núcleo no carga:
+                    <pre>Reinstalar + verificar dependencias (vulkan-utils, lib32...)</pre>
+                </li>
+                <li>💥 Cierre inesperado:
+                    <pre>Usar versión estable (no nightly)</pre>
+                </li>
+                <li>🐌 Rendimiento pobre:
+                    <pre>Cambiar a núcleo ligero (Snes9x vs bsnes)</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 10.4 Casos Extremos -->
+        <h2>10.4 Cirugía Mayor</h2>
+        <div class="warning">
+            <h3>🩺 BIOS Corrupto:</h3>
+            <pre>
+1. Verificar checksum (SHA-1)
+2. Reemplazar archivo
+3. Reiniciar RetroArch</pre>
+
+            <h3>💾 Savegame Roto:</h3>
+            <pre>
+1. Abrir en hex editor (HxD)
+2. Buscar cabecera única
+3. Reparar estructura</pre>
+        </div>
+
+        <!-- 10.5 Herramientas Pro -->
+        <h2>10.5 Kit de Supervivencia</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Herramienta</th>
+                <th>Plataforma</th>
+                <th>Uso</th>
+            </tr>
+            <tr>
+                <td>RetroArch Log Viewer</td>
+                <td>Web</td>
+                <td>Análisis visual de logs</td>
+            </tr>
+            <tr>
+                <td>RA Debug Tool</td>
+                <td>Windows</td>
+                <td>Monitor RAM/CPU</td>
+            </tr>
+            <tr>
+                <td>Core Checker</td>
+                <td>Python</td>
+                <td>Verificar integridad</td>
+            </tr>
+        </table>
+
+        <!-- 10.6 FAQ de la Comunidad -->
+        <h2>10.6 Preguntas Existenciales</h2>
+        <div class="warning retro-list">
+            <ul>
+                <li><strong>¿Por qué mi shader CRT no se ve igual que en YouTube?</strong><br>
+                    → Calibrar gamma (2.4) y temperatura de color (6500K)</li>
+                <li><strong>¿Cómo emular controles de luz como en Time Crisis?</strong><br>
+                    → Usar núcleo MAME + pistola compatible</li>
+            </ul>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-9.html" class="nav-button">« Capítulo 9</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-11.html" class="nav-button">Bonus: Raspberry Pi »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Problemas resueltos como un técnico retro! 🛠️✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Únete al foro: <a href="https://forums.libretro.com" target="_blank">Libretro Community</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

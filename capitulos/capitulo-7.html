@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7 - Magia Gráfica</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 7: Alquimia Visual</h1>
+
+        <!-- 7.1 Filosofía Shader -->
+        <h2>7.1 El Arte de los Shaders</h2>
+        <div class="warning">
+            <pre>
+┌──────────────┐   ┌─────────────┐
+│  Render Base │ → │ Post-Proceso│
+│  (Juego)     │   │  Shader     │
+└──────────────┘   └─────────────┘</pre>
+            <p>✨ <strong>Función:</strong> Transformar píxeles en tiempo real usando GPU</p>
+        </div>
+
+        <!-- 7.2 Tipos de Shaders -->
+        <h2>7.2 Armas del Artista Digital</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Tipo</th>
+                <th>Shader</th>
+                <th>Uso Ideal</th>
+                <th>Impacto GPU</th>
+            </tr>
+            <tr>
+                <td>CRT</td>
+                <td>crt-royale</td>
+                <td>Arcades clásicos</td>
+                <td>🔥🔥🔥</td>
+            </tr>
+            <tr>
+                <td>Handheld</td>
+                <td>lcd-grid-gba</td>
+                <td>Game Boy Advance</td>
+                <td>🔥</td>
+            </tr>
+            <tr>
+                <td>HD</td>
+                <td>xBRZ-6x</td>
+                <td>Juegos 2D en 4K</td>
+                <td>🔥🔥</td>
+            </tr>
+        </table>
+
+        <!-- 7.3 Configuración Maestra -->
+        <h2>7.3 Taller del Alquimista</h2>
+        <div class="retro-list">
+            <ul>
+                <li>📁 Instalar shaders:
+                    <pre>Online Updater → Actualizar Shaders</pre>
+                </li>
+                <li>🎨 Aplicar preset:
+                    <pre>Quick Menu → Shaders → Cargar Preestablecido → crt/crt-royale.slangp</pre>
+                </li>
+                <li>⚙️ Ajustes avanzados:
+                    <pre>#define CURVATURE 0.15 // 0.0-1.0
+#define SCANLINE_STRENGTH 0.75</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 7.4 Configuraciones Legendarias -->
+        <h2>7.4 Recetas de la Perfección</h2>
+        <div class="warning">
+            <h3>🕹️ Mega Drive/Genesis:</h3>
+            <pre>
+shaders = "crt-royale.slangp"
+parameters = {
+    "mask_type": "2",
+    "gamma": "1.1",
+    "scanlines": "0.8"
+}</pre>
+            
+            <h3>📱 Game Boy Pocket:</h3>
+            <pre>
+shaders = "handheld/lcd-grid-gb.slangp"
+parameters = {
+    "pixel_grid": "0.6",
+    "display_color": "#8BAC0F"
+}</pre>
+        </div>
+
+        <!-- 7.5 Rendimiento -->
+        <h2>7.5 Optimización para Hardware Humilde</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Escenario</th>
+                <th>Solución</th>
+                <th>Pérdida Calidad</th>
+            </tr>
+            <tr>
+                <td>GPU integrada</td>
+                <td>Usar crt-easy + scanlines</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>Android low-end</td>
+                <td>shaders = "stock/shaders/4xbr-lv2</td>
+                <td>30%</td>
+            </tr>
+            <tr>
+                <td>Raspberry Pi 4</td>
+                <td>crt-pi (versión ligera)</td>
+                <td>10%</td>
+            </tr>
+        </table>
+
+        <!-- 7.6 Creación de Shaders -->
+        <h2>7.6 Convirtiéndote en Mago</h2>
+        <div class="warning">
+            <pre>
+// Ejemplo: Scanlines básicos
+void main() {
+    vec3 color = texture2D(u_texture, v_tex_coord).rgb;
+    float scanline = sin(v_tex_coord.y * 1000.0) * 0.1;
+    gl_FragColor = vec4(color - scanline, 1.0);
+}</pre>
+            <p>📚 <strong>Aprende:</strong> GLSL/HLSL + <a href="https://github.com/libretro/slang-shaders" target="_blank">Librería Shaders Libretro</a></p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-6.html" class="nav-button">« Capítulo 6</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-8.html" class="nav-button">Capítulo 8 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Píxeles transformados en arte! 🎨✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Descarga presets: <a href="https://github.com/libretro/slang-shaders" target="_blank">Shader Bible</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

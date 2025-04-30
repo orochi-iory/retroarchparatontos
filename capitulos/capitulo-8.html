@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8 - Guardados & Trucos</title>
+    <link rel="stylesheet" href="../css/retro.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div class="container crt-flicker">
+        <h1 class="glow-text">Capítulo 8: Dominando el Tiempo</h1>
+
+        <!-- 8.1 Sistema de Guardado -->
+        <h2>8.1 Estados de Guardado</h2>
+        <div class="warning">
+            <pre>
+Quick Menu → Guardar Estado
+   → Slot: 0-9 (10 slots rápidos)
+   → Auto-guardado al salir: ON
+   → Comprimir: ZSTD (nivel 5)</pre>
+            <p>💾 <strong>Ubicación:</strong> <code>/retroarch/saves/estados</code></p>
+        </div>
+
+        <!-- 8.2 Trucos Legendarios -->
+        <h2>8.2 Códigos de la Vieja Escuela</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Sistema</th>
+                <th>Formato</th>
+                <th>Ejemplo</th>
+                <th>Herramienta</th>
+            </tr>
+            <tr>
+                <td>SNES</td>
+                <td>Game Genie</td>
+                <td>7E0094:63</td>
+                <td>Geiger's SNES Cheat Editor</td>
+            </tr>
+            <tr>
+                <td>PS1</td>
+                <td>CodeBreaker</td>
+                <td>800A4AE6 0001</td>
+                <td>PSX Cheat Central</td>
+            </tr>
+            <tr>
+                <td>GBA</td>
+                <td>Action Replay</td>
+                <td>820257C4 270F</td>
+                <td>GBAATM Auto Trainer</td>
+            </tr>
+        </table>
+
+        <!-- 8.3 Gestión de Cheats -->
+        <h2>8.3 Banco de Trucos</h2>
+        <div class="retro-list">
+            <ul>
+                <li>Descargar base de datos:
+                    <pre>Online Updater → Actualizar Cheats</pre>
+                </li>
+                <li>Activar trucos:
+                    <pre>Quick Menu → Cheats → Buscar por CRC32</pre>
+                </li>
+                <li>Crear trucos personalizados:
+                    <pre>Memoria: 0x8023456A Valor: 0x0001</pre>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 8.4 Técnicas Avanzadas -->
+        <h2>8.4 Secretos de los Pros</h2>
+        <div class="warning">
+            <h3>🕹️ Speedrun Hacks:</h3>
+            <pre>
+1. Guardar estado en punto clave
+2. Cargar estado repetidamente
+3. Combinar con turbo-fire</pre>
+
+            <h3>📚 RPG Master:</h3>
+            <pre>
+1. Editar variables de inventario
+2. Modificar stats de personaje
+3. Saltar eventos con warps</pre>
+        </div>
+
+        <!-- 8.5 Recuperación de Datos -->
+        <h2>8.5 Salvando lo Insalvable</h2>
+        <table class="retro-table">
+            <tr>
+                <th>Problema</th>
+                <th>Solución</th>
+                <th>Herramienta</th>
+            </tr>
+            <tr>
+                <td>Guardado corrupto</td>
+                <td>Hex-editor manual</td>
+                <td>HxD Editor</td>
+            </tr>
+            <tr>
+                <td>Incompatibilidad de formato</td>
+                <td>Conversión SRM → SaveState</td>
+                <td>Save Converter Tool</td>
+            </tr>
+            <tr>
+                <td>Pérdida de progreso</td>
+                <td>Recuperar de backups</td>
+                <td>RA Save Manager</td>
+            </tr>
+        </table>
+
+        <!-- 8.6 Ética del Guardado -->
+        <h2>8.6 El Código de Honor</h2>
+        <div class="warning">
+            <ul class="retro-list">
+                <li>⚠️ No usar trucos en partidas online</li>
+                <li>🏆 Desactivar cheats para speedruns oficiales</li>
+                <li>🔒 Hacer backup de saves cada 2 horas</li>
+            </ul>
+        </div>
+
+        <!-- Navegación -->
+        <div class="nav-buttons">
+            <a href="capitulo-7.html" class="nav-button">« Capítulo 7</a>
+<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="capitulo-9.html" class="nav-button">Capítulo 9 »</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-2">
+            <p class="glow-text">¡Control total sobre el tiempo! ⏳✨</p>
+            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border mt-1" style="padding: 5px;">
+                <pre>Descarga cheats: <a href="https://github.com/libretro/libretro-database" target="_blank">Cheat Database</a></pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
