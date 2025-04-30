@@ -3,160 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 2 - Descarga e Instalación</title>
+    <title>Capítulo 2: Instalación y Configuración Inicial</title>
     <link rel="stylesheet" href="../css/retro.css">
-    <audio id="hover-sound" src="sfx/hover.wav"></audio>
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 2: Descarga e Instalación</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 2: Instalación y Configuración Inicial</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🟡 Intermedio | Duración: 45 min</pre>
+            </div>
+        </header>
 
-        <!-- Sección 2.1 -->
-        <h2>2.1 Descarga Segura</h2>
-        <div class="warning">
-            <p>🔒 <strong>Solo descarga desde fuentes oficiales:</strong></p>
-            <pre><a href="https://www.retroarch.com/?page=platforms" 
-       target="_blank" 
-       class="retro-link"
-       title="Descargas oficiales de RetroArch">
-    <span style="color: #0f0;">https://www.retroarch.com</span> 
-    <span style="color: #ff0;">→</span> 
-    <span style="color: #0ff;">Downloads</span> 
-    <span style="color: #ff0;">→</span> 
-    <span style="color: #f0f;">Tu plataforma</span>
-</a></pre>
+        <article class="retro-article mt-2">
+            <!-- Sección 2.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Descarga Segura</h2>
+                <div class="warning">
+                    <div class="myth-header">
+                        <span class="neon-red">⚠️</span>
+                        <h3 class="subsection-title">Fuentes Oficiales</h3>
+                    </div>
+                    <div class="content-box">
+                        <a href="https://www.retroarch.com/?page=platforms" 
+                           target="_blank" 
+                           class="nav-button"
+                           style="display: block; text-align: center; margin: 1rem 0;">
+                            🌐 RetroArch Oficial
+                        </a>
+                        <ul class="retro-list">
+                            <li>❌ Evitar sitios de terceros</li>
+                            <li>✅ Verificar checksum MD5</li>
+                            <li>🔒 Usar conexión segura (HTTPS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<style>
-.retro-link {
-    text-decoration: none;
-    font-family: 'Courier New', monospace;
-    position: relative;
-}
-
-.retro-link:hover {
-    text-decoration: underline;
-    animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-    0% { transform: translate(1px, 1px); }
-    20% { transform: translate(-1px, -1px); }
-    40% { transform: translate(-1px, 1px); }
-    60% { transform: translate(1px, -1px); }
-    80% { transform: translate(0px, 1px); }
-    100% { transform: translate(0px, 0px); }
-}
-</style>
-            <p>❌ <strong>Evitar:</strong> Sitios de terceros y versiones modificadas</p>
-        </div>
-
-        <!-- Sección 2.2 -->
-        <h2>2.2 Instalación Multiplataforma</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Plataforma</th>
-                <th>Pasos</th>
-                <th>Notas</th>
-            </tr>
-            <tr>
-                <td>🖥️ Windows</td>
-                <td>
-                    <pre>1. Ejecutar .exe
-2. Instalar en C:\RetroArch
-3. Marcar "Core Updater"</pre>
-                </td>
-                <td>Evitar espacios en rutas</td>
-            </tr>
-            <tr>
-                <td>📱 Android</td>
-                <td>
-                    <pre>1. Habilitar fuentes desconocidas
+            <!-- Sección 2.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Instalación Multiplataforma</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">🖥️</div>
+                        <div class="subsection-title">Windows</div>
+                        <pre class="mt-1">1. Ejecutar .exe
+2. Ruta sin espacios
+3. Core Updater ✅</pre>
+                    </div>
+                    
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">📱</div>
+                        <div class="subsection-title">Android</div>
+                        <pre class="mt-1">1. Fuentes desconocidas
 2. Instalar APK
-3. Otorgar permisos</pre>
-                </td>
-                <td>Usar mando Bluetooth</td>
-            </tr>
-            <tr>
-                <td>🎮 Steam Deck</td>
-                <td>
-                    <pre>1. Modo Desktop
-2. Instalar desde Discover
-3. Añadir a Steam</pre>
-                </td>
-                <td>Usar Proton Experimental</td>
-            </tr>
-        </table>
+3. Permisos 🛡️</pre>
+                    </div>
+                    
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">🎮</div>
+                        <div class="subsection-title">Steam Deck</div>
+                        <pre class="mt-1">1. Modo Desktop
+2. Discover Store
+3. Proton Experimental</pre>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Sección 2.3 -->
-        <h2>2.3 Actualización</h2>
-        <div class="retro-list">
-            <ul>
-                <li><strong>Windows/Steam Deck:</strong> Sobreescribir instalación</li>
-                <li><strong>Android:</strong> Reinstalar APK</li>
-                <li><strong>Linux:</strong> Actualizar desde repositorio</li>
-            </ul>
-        </div>
-        <pre class="mt-2">Configuración → Guardar Configuración Actual (hacer backup)</pre>
+            <!-- Sección 2.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Configuración Esencial</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li><strong>Directorio ROMs:</strong> /retroarch/roms</li>
+                        <li><strong>Guardados:</strong> /retroarch/saves</li>
+                        <li><strong>Drivers:</strong> Menu → Ozone</li>
+                    </ul>
+                </div>
+                
+                <table class="retro-table mt-2">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Recomendación</th>
+                            <th>Valor Ideal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Auto Guardado</td>
+                            <td>✅ Activado</td>
+                            <td>Intervalo 10s</td>
+                        </tr>
+                        <tr>
+                            <td>Resolución</td>
+                            <td>Nativa</td>
+                            <td>4:3 Original</td>
+                        </tr>
+                        <tr>
+                            <td>Latencia</td>
+                            <td>Run-Ahead</td>
+                            <td>2 frames</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- Sección 2.4 -->
-        <h2>2.4 Problemas Comunes</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Error</th>
-                <th>Solución</th>
-                <th>Urgencia</th>
-            </tr>
-            <tr>
-                <td>❌ Faltan DLLs</td>
-                <td>Instalar VC++ Redist</td>
-                <td>⚠️ Crítico</td>
-            </tr>
-            <tr>
-                <td>🛡️ Bloqueo Antivirus</td>
-                <td>Añadir excepción</td>
-                <td>⚠️ Importante</td>
-            </tr>
-            <tr>
-                <td>🐢 Rendimiento bajo</td>
-                <td>Desactivar shaders</td>
-                <td>⚡ Optimización</td>
-            </tr>
-        </table>
+            <!-- Sección 2.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Solución de Problemas</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">❌</span>
+                            <h3 class="subsection-title">Faltan DLLs</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Instalar VC++ Redist</li>
+                            <li>Descargar desde Microsoft</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🛡️</span>
+                            <h3 class="subsection-title">Antivirus</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Añadir excepción</li>
+                            <li>Verificar firma digital</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🐢</span>
+                            <h3 class="subsection-title">Lentitud</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Desactivar shaders</li>
+                            <li>Reducir resolución</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Sección 2.5 -->
-        <h2>2.5 Configuración Inicial</h2>
-        <pre>
-1. Settings → Drivers → Menu → Ozone
-2. Settings → Directory:
-   - ROMs: /retroarch/roms
-   - Saves: /retroarch/saves
-3. Guardar configuración</pre>
+            <!-- Sección 2.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Preguntas Frecuentes</h2>
+                <div class="ethics-section">
+                    <div class="myth-buster">
+                        <h3 class="subsection-title neon-yellow">¿Es seguro?</h3>
+                        <p class="retro-list">✅ Sí, si se usa versión oficial y ROMs propias</p>
+                    </div>
+                    
+                    <div class="myth-buster mt-2">
+                        <h3 class="subsection-title neon-yellow">¿Actualizaciones?</h3>
+                        <pre class="retro-list">Windows: Sobreescribir instalación
+Android: Nueva APK
+Linux: Repositorios</pre>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-        <!-- FAQ -->
-        <h2>2.6 Preguntas Frecuentes</h2>
-        <div class="warning">
-            <p><strong>❓ ¿Es seguro RetroArch?</strong><br>
-            ✅ Sí, si se descarga de la web oficial</p>
-            
-            <p><strong>❓ ¿Funciona en macOS?</strong><br>
-            ✅ Sí, versión Universal en la web</p>
-        </div>
-
-        <!-- Navegación -->
-        <div class="nav-buttons">
-            <a href="../index.html" class="nav-button">« Capítulo 1</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+        <div class="nav-buttons mt-2">
+            <a href="capitulo-1.html" class="nav-button">« Capítulo 1</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-3.html" class="nav-button">Capítulo 3 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Configuración exitosa! 🎮✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>Configuración completada 🎮 <a href="capitulo-3.html" 
+                   style="color:#0f0;text-decoration:none;">¡Continuar con Cores!</a></pre>
+            </div>
         </footer>
     </div>
 
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
