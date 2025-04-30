@@ -222,22 +222,42 @@ body::after {
         gap: 1rem;
     }
 }
-.sub-steps {
-    margin-left: 1.5rem;
-    list-style-type: decimal-leading-zero;
-}
+.retroarch-steps {
+        border: 3px double #0f0;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        counter-reset: step-counter;
+        position: relative;
+        overflow: hidden;
+    }
 
-.sub-steps li {
-    margin: 0.8rem 0;
-    padding-left: 1rem;
-}
+    .retroarch-steps li {
+        margin: 2rem 0;
+        position: relative;
+        padding-left: 5rem;
+        min-height: 50px;
+    }
 
-.step-content h3 {
-    color: #ff0;
-    margin-bottom: 0.5rem;
-    font-size: 1.2em;
-    text-shadow: 0 0 8px #ff0;
-}
+    .retroarch-steps li::before {
+        counter-increment: step-counter;
+        content: "Paso " counter(step-counter);
+        position: absolute;
+        left: 0;
+        width: 4.5rem;
+        color: #0f0;
+        font-weight: bold;
+        text-shadow: 0 0 8px #0f0;
+        background: rgba(0, 32, 0, 0.4);
+        padding: 0.3rem 0.8rem;
+        border-radius: 3px;
+        border: 1px solid #0f0;
+    }
+
+    .step-content {
+        margin-left: 1rem;
+        padding: 0.8rem;
+        background: rgba(0, 16, 0, 0.2);
+        border-left: 3px solid #0f0;
 /* ===== UTILIDADES ===== */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
