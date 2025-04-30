@@ -97,16 +97,40 @@
                 link.style.textShadow = 'none';
             });
         });
-	 // Efecto de sonido al pasar el ratón
-    const hoverSound = document.getElementById('hover-sound');
-    hoverSound.volume = 0.3; // Ajusta el volumen (0.1 a 1)
-    
-    document.querySelectorAll('.chapter-list a').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            hoverSound.currentTime = 0; // Reinicia el sonido
-            hoverSound.play();
+	 // Sistema de audio unificado
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Configurar todos los audios
+    const audioElements = {
+        bgMusic: document.getElementById('ending-music'), // Tu música existente
+        hoverSound: new Audio('../sfx/hover.wav') // Ruta relativa desde HTML
+    };
+
+    // 2. Precarga de sonidos
+    audioElements.hoverSound.preload = 'auto';
+    audioElements.hoverSound.volume = 0.4;
+
+    // 3. Activar sonido solo tras interacción del usuario
+    const enableAudio = () => {
+        // Tu música original
+        audioElements.bgMusic.volume = 0.3;
+        audioElements.bgMusic.play().catch(() => {});
+
+        // Sistema hover para todos los enlaces
+        document.body.addEventListener('mouseover', (e) => {
+            if (e.target.closest('a')) {
+                audioElements.hoverSound.currentTime = 0;
+                audioElements.hoverSound.play().catch(() => {});
+            }
         });
-    });
+    };
+
+    // 4. Activar con cualquier clic/touch
+    window.addEventListener('click', enableAudio, { once: true });
+    window.addEventListener('touchstart', enableAudio, { once: true });
+
+    // 5. Depuración
+    console.log('Sistema de audio cargado. Elementos:');
+    console.table(audioElements);
       </script>
 <!-- pong on hover -->
 <script src="/js/sounds.js" defer></script>
