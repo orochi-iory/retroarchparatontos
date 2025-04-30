@@ -157,57 +157,6 @@
             <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
         </footer>
     </div>
-    <script>
-// Configuración del sistema de sonido
-const audioHandler = {
-    hoverSound: new Audio('/sfx/hover.wav'), // Ajusta la ruta según tu estructura
-    init: function() {
-        const link = document.getElementById('retro-link');
-        
-        // Efecto hover para desktop
-        link.addEventListener('mouseenter', () => {
-            this.hoverSound.currentTime = 0;
-            this.hoverSound.play().catch(() => { /* Manejo de errores silencioso */ });
-        });
-        
-        link.addEventListener('mouseleave', () => {
-            this.hoverSound.pause();
-        });
-
-        // Efecto táctil para móviles
-        let isTouching = false;
-        link.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            isTouching = true;
-            this.hoverSound.currentTime = 0;
-            this.hoverSound.play();
-        });
-        
-        link.addEventListener('touchend', () => {
-            if(isTouching) {
-                this.hoverSound.pause();
-                isTouching = false;
-            }
-        });
-    }
-};
-
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    // Precargar el sonido
-    audioHandler.hoverSound.preload = 'auto';
-    
-    // Esperar a que el audio esté listo
-    audioHandler.hoverSound.addEventListener('canplaythrough', () => {
-        audioHandler.init();
-    });
-    
-    // Manejo de errores
-    audioHandler.hoverSound.addEventListener('error', (e) => {
-        console.error('Error cargando hover.wav:', e);
-    });
-});
-</script>
 
 </body>
 </html>
