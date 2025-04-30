@@ -222,6 +222,7 @@ body::after {
         gap: 1rem;
     }
 }
+<style>
 .retroarch-steps {
         border: 3px double #0f0;
         padding: 1.5rem;
@@ -258,6 +259,7 @@ body::after {
         padding: 0.8rem;
         background: rgba(0, 16, 0, 0.2);
         border-left: 3px solid #0f0;
+        </style>
 /* ===== UTILIDADES ===== */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
