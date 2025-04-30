@@ -18,9 +18,36 @@
             <p>🔒 <strong>Solo descarga desde fuentes oficiales:</strong></p>
             <pre><a href="https://www.retroarch.com/?page=platforms" 
        target="_blank" 
-       class="pixel-link">
-    [<span class="blink">►</span>] https://www.retroarch.com → Downloads → Tu plataforma
+       class="retro-link"
+       title="Descargas oficiales de RetroArch">
+    <span style="color: #0f0;">https://www.retroarch.com</span> 
+    <span style="color: #ff0;">→</span> 
+    <span style="color: #0ff;">Downloads</span> 
+    <span style="color: #ff0;">→</span> 
+    <span style="color: #f0f;">Tu plataforma</span>
 </a></pre>
+
+<style>
+.retro-link {
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    position: relative;
+}
+
+.retro-link:hover {
+    text-decoration: underline;
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(1px, 1px); }
+    20% { transform: translate(-1px, -1px); }
+    40% { transform: translate(-1px, 1px); }
+    60% { transform: translate(1px, -1px); }
+    80% { transform: translate(0px, 1px); }
+    100% { transform: translate(0px, 0px); }
+}
+</style>
             <p>❌ <strong>Evitar:</strong> Sitios de terceros y versiones modificadas</p>
         </div>
 
