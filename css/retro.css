@@ -222,7 +222,19 @@ body::after {
         gap: 1rem;
     }
 }
+.step-content {
+    margin-left: 0.5rem;
+}
 
+.step-content h3 {
+    margin: 0 0 0.8rem 0;
+    color: #ff0;
+    font-size: 1.1em;
+}
+
+.step-content ul, .step-content ol {
+    margin: 0.5rem 0 1rem 1rem;
+}
 /* ===== UTILIDADES ===== */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
