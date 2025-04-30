@@ -9,42 +9,6 @@
         <source src="../sfx/hover.wav" type="audio/wav">
         <source src="../sfx/hover.mp3" type="audio/mpeg">
     </audio>
-    <style>
-        .ethics-section {
-            border: 2px dashed #ff0;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            background: rgba(64, 64, 0, 0.2);
-        }
-
-        .myth-buster {
-            border-left: 5px solid #f00;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: rgba(64, 0, 0, 0.2);
-        }
-
-        .retroarch-steps {
-            border: 3px double #0f0;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            counter-reset: step-counter;
-        }
-
-        .retroarch-steps li {
-            margin: 1.5rem 0;
-            position: relative;
-            padding-left: 2.5rem;
-        }
-
-        .retroarch-steps li::before {
-            counter-increment: step-counter;
-            content: "➔ Paso " counter(step-counter) ":";
-            position: absolute;
-            left: 0;
-            color: #0f0;
-        }
-    </style>
 </head>
 <body>
     <div class="crt-overlay"></div>
@@ -53,98 +17,129 @@
         <header class="text-center">
             <h1 class="glow-text">Capítulo 1: ¿Qué es la emulación?</h1>
             <div class="pixel-border mt-1" style="padding: 0.5rem;">
-                <pre>Nivel: 🟢 Básico | Duración: 30 min</pre>
+                <pre>Nivel: 🟢 Básico | Duración: 35 min</pre>
             </div>
         </header>
 
         <article class="retro-article mt-2">
-            <div class="definition-box">
-                <h2 class="glow-text">📖 Definición Técnica:</h2>
-                <p>La emulación es el proceso de recrear el hardware original de un sistema usando software, permitiendo ejecutar programas diseñados para otras arquitecturas.</p>
-            </div>
-
-            <h2 class="glow-text">🕹️ Componentes Clave:</h2>
-            <div class="retro-list">
-                <ul>
-                    <li><strong>Core/Núcleo:</strong> Cerebro del emulador que imita el hardware</li>
-                    <li><strong>BIOS:</strong> Firmware esencial para sistemas complejos</li>
-                    <li><strong>ROM:</strong> Copia digital del software original</li>
-                    <li><strong>Frontend:</strong> Interfaz de usuario (como RetroArch)</li>
-                </ul>
-            </div>
-
-            <h2 class="glow-text">⚖️ Aspectos Legales:</h2>
-            <div class="warning">
-                <pre>
-1. Solo es legal emular juegos que poseas físicamente
-2. El BIOS debe extraerse de tu propia consola
-3. Distribuir ROMs es ilegal sin permiso</pre>
-            </div>
-
-            <div class="pixel-border mt-2" style="padding: 1rem;">
-                <h3 class="glow-text">💡 Datos Curiosos:</h3>
-                <ul class="retro-list">
-                    <li>El primer emulador funcional (1965) fue para el IBM 7074</li>
-                    <li>La PlayStation 2 incluía hardware para emular PS1</li>
-                    <li>¡Algunos juegos modernos usan emulación interna!</li>
-                </ul>
-            </div>
-
-            <!-- Nueva Sección: Reflexión Ética -->
-            <div class="ethics-section">
-                <h2 class="glow-text">⚖️ Ética y Legalidad</h2>
-                <div class="retro-list">
-                    <ul>
-                        <li><strong>Preservación vs Piratería:</strong> 
-                            <ul>
-                                <li>Legal: Copias de seguridad de juegos que posees</li>
-                                <li>Ilegal: Distribuir ROMs protegidas por copyright</li>
-                            </ul>
-                        </li>
-                        <li><strong>Datos Clave:</strong>
-                            <ul>
-                                <li>El 87% de juegos clásicos están en riesgo de perderse (Estudio UNESCO 2023)</li>
-                                <li>Solo el 20% de juegos retro están disponibles comercialmente</li>
-                            </ul>
-                        </li>
+            <!-- Sección 1.1 - Conceptos básicos -->
+            <div class="section">
+                <h2 class="section-title glow-text">Fundamentos técnicos</h2>
+                <div class="content-box">
+                    <p>La emulación es como un <strong>traductor universal</strong> que permite ejecutar software de consolas antiguas en hardware moderno:</p>
+                    <ul class="retro-list">
+                        <li>💾 <strong>ROM</strong>: Copia digital del juego original</li>
+                        <li>🔌 <strong>Core</strong>: "Motor" que imita el hardware viejo</li>
+                        <li>🖥️ <strong>Frontend</strong>: Interfaz para gestionar todo (ej: RetroArch)</li>
                     </ul>
                 </div>
-                <div class="warning mt-1">
-                    <pre>"La emulación es una herramienta poderosa: Úsala para preservar, no para piratear"</pre>
+
+                <div class="stats-grid mt-2">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value">87%</div>
+                        <div class="neon-green">Juegos clásicos en riesgo</div>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value">1996</div>
+                        <div class="neon-green">Primer emulador de PlayStation</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Nueva Sección: Mitos Comunes -->
-            <div class="myth-buster">
-                <h2 class="glow-text">🔍 Mitos Destruidos</h2>
-                <div class="retro-list">
-                    <ul>
-                        <li><strong>Mito 1:</strong> "La emulación es ilegal"
-                            <br><em>Realidad:</em> La tecnología es legal, su uso depende del contenido</li>
-                        <li><strong>Mito 2:</strong> "Necesitas un PC potente"
-                            <br><em>Realidad:</em> Sistemas hasta PS1 funcionan en Raspberry Pi</li>
-                        <li><strong>Mito 3:</strong> "Es solo para piratería"
-                            <br><em>Realidad:</em> Desarrolladores oficiales usan emulación (Nintendo Switch Online)</li>
-                    </ul>
+            <!-- Sección 1.2 - Legalidad -->
+            <div class="section">
+                <h2 class="section-title glow-text">⚖️ Marco legal</h2>
+                <div class="warning">
+                    <pre class="neon-red">
+1. Solo es legal usar ROMs de juegos que poseas físicamente
+2. El BIOS debe extraerse de TU consola
+3. Distribuir copias es delito</pre>
+                </div>
+
+                <div class="myth-card mt-2">
+                    <div class="myth-header">
+                        <span class="neon-red">❗</span>
+                        <h3 class="subsection-title">Caso real</h3>
+                    </div>
+                    <blockquote class="retro-list">
+                        "Nintendo vs. Yuzu (2024): Demandados por emular Switch antes de su lanzamiento comercial"
+                    </blockquote>
                 </div>
             </div>
-            
+
+            <!-- Sección 1.3 - Introducción a RetroArch -->
+            <div class="section">
+                <h2 class="section-title glow-text">🕹️ ¿Qué es RetroArch?</h2>
+                <div class="content-box">
+                    <p>El <strong>Netflix de los emuladores</strong> - Unifica todas tus consolas en una interfaz:</p>
+                    <ul class="retro-list">
+                        <li>🎮 50+ sistemas soportados</li>
+                        <li>⚙️ Configuración unificada</li>
+                        <li>🌍 Multiplataforma (PC, móvil, Raspberry Pi)</li>
+                    </ul>
+                </div>
+
+                <table class="retro-table mt-2">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>RetroArch</th>
+                            <th>Emulador normal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cores</strong></td>
+                            <td>✅ Integrados</td>
+                            <td>❌ Manual</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guardados</strong></td>
+                            <td>📁 Unificados</td>
+                            <td>🗂️ Por juego</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shaders</strong></td>
+                            <td>50+ efectos</td>
+                            <td>5-10 máximo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sección 1.4 - Ventajas RetroArch -->
+            <div class="section">
+                <h2 class="section-title glow-text">🌟 ¿Por qué RetroArch?</h2>
+                <div class="ethics-section">
+                    <h3 class="subsection-title neon-cyan">Beneficios clave</h3>
+                    <ul class="retro-list">
+                        <li>🎮 <strong>Netplay</strong>: Juega online con amigos</li>
+                        <li>📊 <strong>Estadísticas</strong>: FPS, latencia en tiempo real</li>
+                        <li>🔧 <strong>RetroAchievements</strong>: Logros estilo Steam/Xbox</li>
+                    </ul>
+                </div>
+
+                <div class="myth-buster mt-2">
+                    <h3 class="subsection-title neon-yellow">Mito destruido</h3>
+                    <p class="retro-list">"RetroArch es difícil" → Tiene modo sencillo para principiantes</p>
+                </div>
+            </div>
         </article>
 
         <div class="nav-buttons mt-2">
             <a href="../index.html" class="nav-button">« Volver al Índice</a>
-            <a href="capitulo-2.html" class="nav-button">Capitulo 2 »</a>
+            <a href="capitulo-2.html" class="nav-button">Capítulo 2 »</a>
         </div>
 
         <footer class="footer mt-2">
             <div class="pixel-border" style="padding: 5px;">
-                <pre>¿Listo para la acción? <a href="capitulo-2.html" 
-                   style="color:#0f0;text-decoration:none;">¡Salta al Capítulo 2!</a></pre>
+                <pre>¿Listo para instalar? <a href="capitulo-2.html" 
+                   style="color:#0f0;text-decoration:none;">¡Vamos al Capítulo 2!</a></pre>
             </div>
         </footer>
     </div>
 
-    <!-- Sistema de Audio Mejorado -->
+    <!-- Sistema de Audio (idéntico al original) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audioManager = {
@@ -174,12 +169,10 @@
                         }
                     };
 
-                    // Activación por cualquier interacción
                     ['click', 'touchstart', 'keydown'].forEach(event => {
                         window.addEventListener(event, enableSystem);
                     });
 
-                    // Sonido en hover
                     document.querySelectorAll('a, button, kbd').forEach(element => {
                         element.addEventListener('mouseenter', () => {
                             if (this.elements.enabled) {
@@ -215,8 +208,6 @@
 
             audioManager.init();
         });
-
-        
     </script>
 </body>
 </html>
