@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capítulo 2 - Descarga e Instalación</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound" src="sfx/hover.wav"></audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
@@ -156,5 +157,18 @@
             <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
         </footer>
     </div>
+    <script>
+        // Efecto de sonido al pasar el ratón
+    const hoverSound = document.getElementById('hover-sound');
+    hoverSound.volume = 0.3; // Ajusta el volumen (0.1 a 1)
+    
+    document.querySelectorAll('.chapter-list a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0; // Reinicia el sonido
+            hoverSound.play();
+        });
+    });
+      </script>
+
 </body>
 </html>
