@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emulación para Torpes - Índice</title>
     <link rel="stylesheet" href="css/retro.css">
-    <audio id="hover-sound" src="sfx/hover.wav"></audio>
+    <audio id="hover-sound">
+        <source src="sfx/hover.wav" type="audio/wav">
+        <source src="sfx/hover.mp3" type="audio/mpeg">
+    </audio>
     <style>
-        /* Estilos unificados para los enlaces */
         .chapter-list a {
-            color: #00ff00; /* Verde neón */
+            color: #00ff00;
             text-decoration: none;
             transition: all 0.3s ease;
             font-family: 'Courier New', monospace;
+            position: relative;
         }
 
         .chapter-list a:hover {
-            color: #ffff00; /* Amarillo neón */
+            color: #ffff00;
             text-shadow: 0 0 10px #00ff00;
             transform: translateX(5px);
+        }
+
+        /* Efecto de cursor retro */
+        .audio-enabled a {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text x="5" y="26" font-family="Courier New" font-size="24" fill="%2300FF00">▶</text></svg>'), auto;
         }
     </style>
 </head>
@@ -49,7 +57,7 @@
                     <li><a href="capitulos/capitulo-9.html">9. Streaming Retro</a></li>
                     <li><a href="capitulos/capitulo-10.html">10. Solución de Problemas</a></li>
                     <li><a href="capitulos/capitulo-11.html">Bonus: Proyecto Raspberry Pi</a></li>
-		    <li><a href="capitulos/capitulo-12.html">Capítulo Final: ¡Eres un Maestro Retro!</a></li>
+                    <li><a href="capitulos/capitulo-12.html">Capítulo Final: ¡Eres un Maestro Retro!</a></li>
                 </ul>
             </div>
         </nav>
@@ -82,55 +90,76 @@
         </footer>
     </div>
 
-    <!-- Efecto CRT -->
+    <!-- Scripts unificados -->
     <script>
-	   setInterval(() => {
+        // Efecto CRT
+        setInterval(() => {
             const flicker = Math.random() * 0.15;
             document.querySelector('.container').style.opacity = 1 - flicker;
         }, 100);
 
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                link.style.textShadow = '0 0 15px #00ff00';
-            });
-            link.addEventListener('mouseleave', () => {
-                link.style.textShadow = 'none';
-            });
+        // Sistema de audio mejorado
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = {
+                hover: document.getElementById('hover-sound'),
+                enabled: false,
+                
+                init() {
+                    this.hover.volume = 0.4;
+                    this.setupEventListeners();
+                    this.addDebugInfo();
+                },
+
+                setupEventListeners() {
+                    // Activación con primer clic
+                    const enableAudio = () => {
+                        this.enabled = true;
+                        document.body.classList.add('audio-enabled');
+                        console.log('Audio habilitado');
+                    };
+
+                    window.addEventListener('click', enableAudio, { once: true });
+                    window.addEventListener('touchstart', enableAudio, { once: true });
+
+                    // Sonido al pasar el ratón
+                    document.body.addEventListener('mouseover', (e) => {
+                        if (this.enabled && e.target.closest('a')) {
+                            this.playHoverSound();
+                        }
+                    });
+
+                    // Sonido en móviles
+                    document.body.addEventListener('touchstart', (e) => {
+                        if (this.enabled && e.target.closest('a')) {
+                            this.playHoverSound();
+                        }
+                    }, { passive: true });
+                },
+
+                playHoverSound() {
+                    try {
+                        this.hover.currentTime = 0;
+                        this.hover.play();
+                        console.log('Sonido reproducido');
+                    } catch (error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                addDebugInfo() {
+                    console.log('Estado del sistema de audio:', {
+                        hoverSound: {
+                            src: this.hover.currentSrc,
+                            readyState: this.hover.readyState,
+                            volume: this.hover.volume
+                        },
+                        audioEnabled: this.enabled
+                    });
+                }
+            };
+
+            audio.init();
         });
-	 // Sistema de audio unificado
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Configurar todos los audios
-    const audioElements = {
-        bgMusic: document.getElementById('ending-music'), // Tu música existente
-        hoverSound: new Audio('../sfx/hover.wav') // Ruta relativa desde HTML
-    };
-
-    // 2. Precarga de sonidos
-    audioElements.hoverSound.preload = 'auto';
-    audioElements.hoverSound.volume = 0.4;
-
-    // 3. Activar sonido solo tras interacción del usuario
-    const enableAudio = () => {
-        // Tu música original
-        audioElements.bgMusic.volume = 0.3;
-        audioElements.bgMusic.play().catch(() => {});
-
-        // Sistema hover para todos los enlaces
-        document.body.addEventListener('mouseover', (e) => {
-            if (e.target.closest('a')) {
-                audioElements.hoverSound.currentTime = 0;
-                audioElements.hoverSound.play().catch(() => {});
-            }
-        });
-    };
-
-    // 4. Activar con cualquier clic/touch
-    window.addEventListener('click', enableAudio, { once: true });
-    window.addEventListener('touchstart', enableAudio, { once: true });
-
-    // 5. Depuración
-    console.log('Sistema de audio cargado. Elementos:');
-    console.table(audioElements);
-      </script>
+    </script>
 </body>
 </html>
