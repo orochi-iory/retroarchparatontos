@@ -193,7 +193,27 @@ pre {
     .container {
         padding: 10px;
     }
-    
+/* pong on hover */
+a {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text x="5" y="18" font-family="Courier New" font-size="16" fill="%230f0">▶</text></svg>'), auto;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+a:hover {
+    text-shadow: 0 0 8px #0f0;
+    filter: drop-shadow(0 0 2px #0f0);
+}
+
+/* Sistema de sonido global */
+body::after {
+    content: '';
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    opacity: 0;
+    pointer-events: none;
+}    
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     
