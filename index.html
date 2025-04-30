@@ -84,7 +84,8 @@
 
     <!-- Efecto CRT -->
     <script>
-        setInterval(() => {
+        src="/JS/sounds.js" defer
+	    setInterval(() => {
             const flicker = Math.random() * 0.15;
             document.querySelector('.container').style.opacity = 1 - flicker;
         }, 100);
@@ -108,6 +109,6 @@
         });
     });
       </script>
-	<script src="/js/sounds.js" defer></script>
+
 </body>
 </html>
