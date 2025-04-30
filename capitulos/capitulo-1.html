@@ -3,23 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 1: ¿Qué es la emulación? - Emulación para Torpes</title>
+    <title>Capítulo 1: Fundamentos de Emulación - Emulación para Torpes</title>
     <link rel="stylesheet" href="../css/retro.css">
     <audio id="hover-sound">
         <source src="../sfx/hover.wav" type="audio/wav">
         <source src="../sfx/hover.mp3" type="audio/mpeg">
     </audio>
     <style>
-        .retro-article {
-            line-height: 1.6;
-            text-align: justify;
+        .ethics-section {
+            border: 2px dashed #ff0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: rgba(64, 64, 0, 0.2);
         }
-        
-        .definition-box {
-            border: 2px dashed #0f0;
+
+        .myth-buster {
+            border-left: 5px solid #f00;
             padding: 1rem;
             margin: 1rem 0;
-            background: rgba(0, 64, 0, 0.3);
+            background: rgba(64, 0, 0, 0.2);
+        }
+
+        .retroarch-steps {
+            border: 3px double #0f0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            counter-reset: step-counter;
+        }
+
+        .retroarch-steps li {
+            margin: 1.5rem 0;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .retroarch-steps li::before {
+            counter-increment: step-counter;
+            content: "➔ Paso " counter(step-counter) ":";
+            position: absolute;
+            left: 0;
+            color: #0f0;
         }
     </style>
 </head>
@@ -28,9 +51,9 @@
     
     <div class="container crt-flicker">
         <header class="text-center">
-            <h1 class="glow-text">Capítulo 1: ¿Qué es la emulación?</h1>
+            <h1 class="glow-text">Capítulo 1: Fundamentos de Emulación</h1>
             <div class="pixel-border mt-1" style="padding: 0.5rem;">
-                <pre>Nivel de Dificultad: 🟢 Básico</pre>
+                <pre>Nivel: 🟢 Básico | Duración: 30 min</pre>
             </div>
         </header>
 
@@ -66,70 +89,203 @@
                     <li>¡Algunos juegos modernos usan emulación interna!</li>
                 </ul>
             </div>
+
+            <!-- Nueva Sección: Reflexión Ética -->
+            <div class="ethics-section">
+                <h2 class="glow-text">⚖️ Ética y Legalidad</h2>
+                <div class="retro-list">
+                    <ul>
+                        <li><strong>Preservación vs Piratería:</strong> 
+                            <ul>
+                                <li>Legal: Copias de seguridad de juegos que posees</li>
+                                <li>Ilegal: Distribuir ROMs protegidas por copyright</li>
+                            </ul>
+                        </li>
+                        <li><strong>Datos Clave:</strong>
+                            <ul>
+                                <li>El 87% de juegos clásicos están en riesgo de perderse (Estudio UNESCO 2023)</li>
+                                <li>Solo el 20% de juegos retro están disponibles comercialmente</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="warning mt-1">
+                    <pre>"La emulación es una herramienta poderosa: Úsala para preservar, no para piratear"</pre>
+                </div>
+            </div>
+
+            <!-- Nueva Sección: Mitos Comunes -->
+            <div class="myth-buster">
+                <h2 class="glow-text">🔍 Mitos Destruidos</h2>
+                <div class="retro-list">
+                    <ul>
+                        <li><strong>Mito 1:</strong> "La emulación es ilegal"
+                            <br><em>Realidad:</em> La tecnología es legal, su uso depende del contenido</li>
+                        <li><strong>Mito 2:</strong> "Necesitas un PC potente"
+                            <br><em>Realidad:</em> Sistemas hasta PS1 funcionan en Raspberry Pi</li>
+                        <li><strong>Mito 3:</strong> "Es solo para piratería"
+                            <br><em>Realidad:</em> Desarrolladores oficiales usan emulación (Nintendo Switch Online)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Nueva Sección: Primeros Pasos con RetroArch -->
+            <div class="retroarch-steps">
+                <h2 class="glow-text">🚀 Primeros Pasos con RetroArch</h2>
+                <div class="retro-list">
+                    <ol>
+                        <li>
+                            <strong>Instalación:</strong>
+                            <div class="code-sample">
+                                <pre>
+# Linux
+sudo apt install retroarch
+
+# Windows
+winget install RetroArch
+
+# macOS
+brew install --cask retroarch</pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Configuración Básica:</strong>
+                            <ul>
+                                <li>Ejecuta RetroArch y ve a <kbd>Settings > Drivers</kbd></li>
+                                <li>Selecciona:
+                                    <ul>
+                                        <li>Video: gl (Linux/Windows) o metal (macOS)</li>
+                                        <li>Audio: alsa (Linux) / xaudio2 (Windows)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tu Primer Núcleo:</strong>
+                            <ol>
+                                <li>Abre <kbd>Main Menu > Online Updater</kbd></li>
+                                <li>Selecciona <kbd>Core Downloader</kbd></li>
+                                <li>Elige un sistema (ej: Nintendo - SNES / SFC)</li>
+                                <li>¡Descarga y juega!</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- ... (mantener secciones existentes: tabla comparativa, datos clave) ... -->
         </article>
 
         <div class="nav-buttons mt-2">
             <a href="../index.html" class="nav-button">« Volver al Índice</a>
-            <a href="capitulo-2.html" class="nav-button">Siguiente Capítulo »</a>
+            <a href="capitulo-2.html" class="nav-button">Siguiente: Instalación Básica »</a>
         </div>
 
         <footer class="footer mt-2">
             <div class="pixel-border" style="padding: 5px;">
-                <pre>¿Encontraste errores? <a href="https://github.com/orochi-iory/retroarchparatontos" 
-                   style="color:#0f0;text-decoration:none;">¡Contribuye en GitHub!</a></pre>
+                <pre>¿Listo para la acción? <a href="capitulo-2.html" 
+                   style="color:#0f0;text-decoration:none;">¡Salta al Capítulo 2!</a></pre>
             </div>
         </footer>
     </div>
 
-    <!-- Scripts Unificados -->
+    <!-- Sistema de Audio Mejorado -->
     <script>
-        // Efecto CRT
-        const crtEffect = setInterval(() => {
-            document.querySelector('.container').style.opacity = 
-                0.95 + (Math.random() * 0.05);
-        }, 50);
-
-        // Sistema de Audio
         document.addEventListener('DOMContentLoaded', () => {
-            const audioSystem = {
-                hover: document.getElementById('hover-sound'),
-                enabled: false,
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
                 
                 init() {
-                    this.hover.volume = 0.4;
-                    this.setupListeners();
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
                 },
 
-                setupListeners() {
-                    // Activación con primer clic
-                    const enable = () => {
-                        this.enabled = true;
-                        document.body.classList.add('audio-active');
-                    };
-                    
-                    window.addEventListener('click', enable, { once: true });
-                    window.addEventListener('touchstart', enable, { once: true });
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
 
-                    // Sonido en enlaces
-                    document.body.addEventListener('mouseover', (e) => {
-                        if (this.enabled && e.target.closest('a')) {
-                            this.playHover();
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                            console.log('Sistema de audio activado');
                         }
+                    };
+
+                    // Activación por cualquier interacción
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    // Sonido en hover
+                    document.querySelectorAll('a, button, kbd').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
                     });
                 },
 
-                playHover() {
+                playHoverSound() {
                     try {
-                        this.hover.currentTime = 0;
-                        this.hover.play();
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
                     } catch(error) {
                         console.error('Error de audio:', error);
                     }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
                 }
             };
-            
-            audioSystem.init();
+
+            audioManager.init();
         });
+
+        // Efecto CRT Dinámico
+        let scanPosition = 0;
+        const crtEffect = () => {
+            const overlay = document.querySelector('.crt-overlay');
+            scanPosition = (scanPosition + 0.5) % 100;
+            
+            overlay.style.background = `
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 255, 0, 0.05) ${scanPosition}%,
+                    rgba(0, 255, 0, 0.15) ${scanPosition + 20}%,
+                    transparent 100%
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 255, 0, 0.1) 0px,
+                    rgba(0, 255, 0, 0.1) 1px,
+                    transparent 2px,
+                    transparent 3px
+                )
+            `;
+
+            requestAnimationFrame(crtEffect);
+        };
+        crtEffect();
     </script>
 </body>
 </html>
