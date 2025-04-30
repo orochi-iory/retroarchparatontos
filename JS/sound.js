@@ -1,4 +1,4 @@
-// js/sounds.js
+// JS/sound.js
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Precargar el sonido
     const hoverSound = new Audio('/sfx/hover.wav');
