@@ -1,4 +1,4 @@
-/* retro.css - Versión Final 3.0 */
+/* retro.css - Versión 3.2 Final */
 /* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
@@ -71,49 +71,51 @@ body {
     z-index: 1;
 }
 
-/* ===== TIPOGRAFÍA PIXEL ===== */
+/* ===== JERARQUÍA DE TÍTULOS ===== */
 h1, h2, h3,
 .section-title,
-.subsection-title,
-.nav-button {
+.subsection-title {
     font-family: 'Silkscreen', 'Press Start 2P', cursive;
     text-rendering: geometricPrecision;
     image-rendering: crisp-edges;
-    letter-spacing: -2px;
     margin: 1.2rem 0;
+    letter-spacing: -2px;
 }
 
 h1 {
+    color: var(--neon-green);
     font-size: 2.6rem;
     text-shadow: 
         3px 3px 0 var(--neon-red),
         0 0 15px var(--neon-green);
-    line-height: 1;
     border-bottom: 4px dashed var(--neon-green);
     padding-bottom: 0.8rem;
 }
 
 h2 {
+    color: var(--neon-yellow);
     font-size: 2rem;
     text-shadow: 
-        2px 2px 0 var(--neon-cyan),
-        0 0 10px var(--neon-green);
-    border-bottom: 3px dotted var(--neon-green);
+        2px 2px 0 var(--neon-red),
+        0 0 12px var(--neon-yellow);
+    border-bottom: 3px dotted var(--neon-yellow);
     padding: 0.6rem 0;
 }
 
 h3 {
+    color: var(--neon-cyan);
     font-size: 1.4rem;
     text-shadow: 
-        1px 1px 0 var(--neon-yellow),
-        0 0 8px var(--neon-green);
+        1px 1px 0 var(--neon-red),
+        0 0 10px var(--neon-cyan);
 }
 
 /* ===== COMPONENTES ===== */
 .pixel-border {
-    border: 3px solid var(--neon-green);
-    box-shadow: 0 0 12px var(--neon-green);
+    border: 3px solid var(--neon-yellow);
+    box-shadow: 0 0 12px var(--neon-yellow);
     margin: 1rem 0;
+    padding: 1rem;
 }
 
 .retro-list {
@@ -129,42 +131,46 @@ h3 {
 
 .retro-list li::before {
     content: ">";
-    color: var(--neon-green);
+    color: var(--neon-yellow);
     position: absolute;
     left: -1.5rem;
     font-family: 'Silkscreen', monospace;
-    text-shadow: 0 0 8px var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-yellow);
 }
 
-/* ===== ENLACES Y BOTONES ===== */
-.retro-list a,
+/* ===== BOTONES Y ENLACES ===== */
 .nav-button {
-    color: var(--neon-green);
+    background: #002200;
+    border: 3px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+    padding: 1rem 2rem;
+    margin: 0.8rem 0;
+    font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    letter-spacing: -1px;
+    display: inline-block;
+}
+
+.retro-list a {
+    color: var(--neon-green);
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 .retro-list a:hover,
 .nav-button:hover {
     color: var(--neon-yellow);
-    text-shadow: var(--glow) var(--neon-green);
+    text-shadow: 
+        0 0 15px var(--neon-yellow),
+        2px 2px 0 var(--neon-red);
     transform: translateX(6px) skewX(-8deg);
-}
-
-.nav-button {
-    background: #002200;
-    border: 3px solid var(--neon-green);
-    padding: 1rem 2rem;
-    margin: 0.8rem 0;
-    display: inline-block;
-    font-size: 1.1rem;
-    letter-spacing: -1px;
 }
 
 /* ===== ANIMACIONES ===== */
 @keyframes text-glow {
-    0% { text-shadow: 0 0 5px var(--neon-green); }
-    100% { text-shadow: 0 0 20px var(--neon-green); }
+    0% { text-shadow: 0 0 5px var(--neon-yellow); }
+    100% { text-shadow: 0 0 20px var(--neon-yellow); }
 }
 
 .glow-text {
@@ -188,12 +194,16 @@ h1:hover, h2:hover, h3:hover {
 
     h1 {
         font-size: 1.8rem;
-        letter-spacing: -1px;
-        padding-bottom: 0.5rem;
+        text-shadow: 
+            2px 2px 0 var(--neon-red),
+            0 0 12px var(--neon-green);
     }
 
     h2 {
         font-size: 1.4rem;
+        text-shadow: 
+            1px 1px 0 var(--neon-red),
+            0 0 10px var(--neon-yellow);
     }
 
     h3 {
@@ -215,5 +225,10 @@ h1:hover, h2:hover, h3:hover {
 .mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
 .neon-green { color: var(--neon-green); }
-.neon-red { color: var(--neon-red); }
-pre { white-space: pre-wrap; }
+.neon-yellow { color: var(--neon-yellow); }
+.neon-cyan { color: var(--neon-cyan); }
+pre { 
+    background: #002200;
+    padding: 1rem;
+    white-space: pre-wrap;
+}
