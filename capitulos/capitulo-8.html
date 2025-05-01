@@ -3,137 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 8 - Guardados & Trucos</title>
+    <title>Capítulo 8: Guardados & Trucos</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 8: Dominando el Tiempo</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 8: Dominando el Tiempo</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🟠 Intermedio | Duración: 45 min</pre>
+            </div>
+        </header>
 
-        <!-- 8.1 Sistema de Guardado -->
-        <h2>8.1 Estados de Guardado</h2>
-        <div class="warning">
-            <pre>
+        <article class="retro-article mt-2">
+            <!-- Sección 8.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Estados de Guardado</h2>
+                <div class="content-box">
+                    <pre class="neon-yellow">
 Quick Menu → Guardar Estado
-   → Slot: 0-9 (10 slots rápidos)
-   → Auto-guardado al salir: ON
-   → Comprimir: ZSTD (nivel 5)</pre>
-            <p>💾 <strong>Ubicación:</strong> <code>/retroarch/saves/estados</code></p>
-        </div>
+   → Slot: 0-9
+   → Auto-guardado: ON
+   → Compresión: ZSTD (nivel 5)</pre>
+                    <div class="myth-card mt-2">
+                        <div class="myth-header">
+                            <span class="neon-red">💾</span>
+                            <h3 class="subsection-title">Ubicación</h3>
+                        </div>
+                        <p class="retro-list"><code>/retroarch/saves/estados</code></p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 8.2 Trucos Legendarios -->
-        <h2>8.2 Códigos de la Vieja Escuela</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Sistema</th>
-                <th>Formato</th>
-                <th>Ejemplo</th>
-                <th>Herramienta</th>
-            </tr>
-            <tr>
-                <td>SNES</td>
-                <td>Game Genie</td>
-                <td>7E0094:63</td>
-                <td>Geiger's SNES Cheat Editor</td>
-            </tr>
-            <tr>
-                <td>PS1</td>
-                <td>CodeBreaker</td>
-                <td>800A4AE6 0001</td>
-                <td>PSX Cheat Central</td>
-            </tr>
-            <tr>
-                <td>GBA</td>
-                <td>Action Replay</td>
-                <td>820257C4 270F</td>
-                <td>GBAATM Auto Trainer</td>
-            </tr>
-        </table>
+            <!-- Sección 8.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Códigos Legendarios</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Sistema</th>
+                            <th>Formato</th>
+                            <th>Ejemplo</th>
+                            <th>Herramienta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-red">🎮</span> SNES</td>
+                            <td>Game Genie</td>
+                            <td>7E0094:63</td>
+                            <td>Geiger's Editor</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">📀</span> PS1</td>
+                            <td>CodeBreaker</td>
+                            <td>800A4AE6 0001</td>
+                            <td>PSX Cheat Central</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">📱</span> GBA</td>
+                            <td>Action Replay</td>
+                            <td>820257C4 270F</td>
+                            <td>GBAATM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 8.3 Gestión de Cheats -->
-        <h2>8.3 Banco de Trucos</h2>
-        <div class="retro-list">
-            <ul>
-                <li>Descargar base de datos:
-                    <pre>Online Updater → Actualizar Cheats</pre>
-                </li>
-                <li>Activar trucos:
-                    <pre>Quick Menu → Cheats → Buscar por CRC32</pre>
-                </li>
-                <li>Crear trucos personalizados:
-                    <pre>Memoria: 0x8023456A Valor: 0x0001</pre>
-                </li>
-            </ul>
-        </div>
+            <!-- Sección 8.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Banco de Trucos</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li>Descargar base de datos: Online Updater → Cheats</li>
+                        <li>Activar por CRC32: Quick Menu → Cheats</li>
+                        <li>Crear personalizados:
+                            <pre class="mt-1 neon-cyan">Memoria: 0x8023456A Valor: 0x0001</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <!-- 8.4 Técnicas Avanzadas -->
-        <h2>8.4 Secretos de los Pros</h2>
-        <div class="warning">
-            <h3>🕹️ Speedrun Hacks:</h3>
-            <pre>
-1. Guardar estado en punto clave
-2. Cargar estado repetidamente
-3. Combinar con turbo-fire</pre>
+            <!-- Sección 8.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Técnicas Avanzadas</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">⏩</span>
+                            <h3 class="subsection-title">Speedrun Hacks</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Guardar en puntos clave</li>
+                            <li>Carga rápida con turbo-fire</li>
+                            <li>Optimización de rutas</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">📖</span>
+                            <h3 class="subsection-title">RPG Master</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Editar variables de inventario</li>
+                            <li>Modificar stats</li>
+                            <li>Saltar eventos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <h3>📚 RPG Master:</h3>
-            <pre>
-1. Editar variables de inventario
-2. Modificar stats de personaje
-3. Saltar eventos con warps</pre>
-        </div>
+            <!-- Sección 8.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Recuperación de Datos</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">💔</div>
+                        <div class="subsection-title">Corruptos</div>
+                        <small>HxD Editor</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">🔄</div>
+                        <div class="subsection-title">Conversión</div>
+                        <small>Save Converter</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">🔙</div>
+                        <div class="subsection-title">Backups</div>
+                        <small>RA Save Manager</small>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 8.5 Recuperación de Datos -->
-        <h2>8.5 Salvando lo Insalvable</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Problema</th>
-                <th>Solución</th>
-                <th>Herramienta</th>
-            </tr>
-            <tr>
-                <td>Guardado corrupto</td>
-                <td>Hex-editor manual</td>
-                <td>HxD Editor</td>
-            </tr>
-            <tr>
-                <td>Incompatibilidad de formato</td>
-                <td>Conversión SRM → SaveState</td>
-                <td>Save Converter Tool</td>
-            </tr>
-            <tr>
-                <td>Pérdida de progreso</td>
-                <td>Recuperar de backups</td>
-                <td>RA Save Manager</td>
-            </tr>
-        </table>
+            <!-- Sección 8.6 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Código de Honor</h2>
+                <div class="warning">
+                    <div class="myth-header">
+                        <span class="neon-red">⚔️</span>
+                        <h3 class="subsection-title">Ética del Jugador</h3>
+                    </div>
+                    <ul class="retro-list">
+                        <li>❌ No usar trucos online</li>
+                        <li>🏆 Speedruns limpios</li>
+                        <li>💾 Backup cada 2 horas</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
 
-        <!-- 8.6 Ética del Guardado -->
-        <h2>8.6 El Código de Honor</h2>
-        <div class="warning">
-            <ul class="retro-list">
-                <li>⚠️ No usar trucos en partidas online</li>
-                <li>🏆 Desactivar cheats para speedruns oficiales</li>
-                <li>🔒 Hacer backup de saves cada 2 horas</li>
-            </ul>
-        </div>
-
-        <!-- Navegación -->
-        <div class="nav-buttons">
+        <div class="nav-buttons mt-2">
             <a href="capitulo-7.html" class="nav-button">« Capítulo 7</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-9.html" class="nav-button">Capítulo 9 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Control total sobre el tiempo! ⏳✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
-            <div class="pixel-border mt-1" style="padding: 5px;">
-                <pre>Descarga cheats: <a href="https://github.com/libretro/libretro-database" target="_blank">Cheat Database</a></pre>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¡Tiempo dominado! ⏳ <a href="capitulo-9.html" 
+                   style="color:#0f0;text-decoration:none;">Siguiente: Netplay Avanzado</a></pre>
+                <div class="mt-1" style="text-align: center;">
+                    <a href="https://github.com/libretro/libretro-database" 
+                       target="_blank" 
+                       class="nav-button"
+                       style="padding: 0.5rem;">
+                        Base de Datos de Cheats
+                    </a>
+                </div>
+                <div class="mt-1 neon-green" style="text-align: center;">
+                    Creado por orochi_iory con DeepSeek-R1
+                </div>
             </div>
         </footer>
     </div>
+
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
