@@ -1,4 +1,4 @@
-/* retro.css - Tema CRT Retro para "Emulación para Torpes" */
+/* retro.css - Tema CRT Retro actualizado */
 
 /* ===== RESET & VARIABLES ===== */
 * {
@@ -51,6 +51,24 @@
     100% { opacity: 0.98; }
 }
 
+/* ===== TIPOGRAFÍA PIXEL ===== */
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.3rem;
+    letter-spacing: -3px;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: crisp-edges;
+}
+
+@media (max-width: 768px) {
+    .pixel-font {
+        font-size: 1.8rem;
+        letter-spacing: -1px;
+    }
+}
+
 /* ===== ESTRUCTURA BASE ===== */
 body {
     background: var(--crt-bg);
@@ -58,7 +76,7 @@ body {
     font-family: 'Courier New', monospace;
     line-height: 1.6;
     overflow-x: hidden;
-    counter-reset: section; /* Añadido para numeración jerárquica */
+    counter-reset: section;
 }
 
 .container {
@@ -69,20 +87,28 @@ body {
     z-index: 1;
 }
 
-/* ===== TIPOGRAFÍA ===== */
-h1, h2, h3 {
-    color: var(--neon-yellow);
-    text-shadow: var(--glow) var(--neon-yellow);
-    margin: 1.5rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px dashed var(--neon-green);
+/* ===== COMPONENTES PRINCIPALES ===== */
+.glow-text {
+    animation: text-glow 1.5s ease-in-out infinite alternate;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+@keyframes text-glow {
+    from { text-shadow: 0 0 5px var(--neon-green); }
+    to { text-shadow: 0 0 15px var(--neon-green); }
+}
 
-/* ===== COMPONENTES PRINCIPALES ===== */
+.retro-list a {
+    color: var(--neon-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.retro-list a:hover {
+    color: var(--neon-yellow);
+    text-shadow: var(--glow) var(--neon-green);
+    transform: translateX(5px);
+}
+
 .warning {
     background: #220000;
     border: 2px dashed var(--neon-red);
