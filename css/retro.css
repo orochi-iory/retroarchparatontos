@@ -1,5 +1,4 @@
-/* retro.css - Tema CRT Retro actualizado */
-
+/* retro.css - Tema CRT Retro con fuentes pixel */
 /* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
@@ -15,6 +14,23 @@
     --crt-bg: #000;
     --scanline: rgba(0, 255, 0, 0.05);
     --glow: 0 0 10px;
+}
+
+/* ===== FUENTES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.3rem;
+    letter-spacing: -3px;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: crisp-edges;
+    filter: 
+        drop-shadow(2px 2px 0 var(--neon-green))
+        contrast(200%)
+        brightness(110%);
 }
 
 /* ===== EFECTOS CRT ===== */
@@ -51,24 +67,6 @@
     100% { opacity: 0.98; }
 }
 
-/* ===== TIPOGRAFÍA PIXEL ===== */
-.pixel-font {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.3rem;
-    letter-spacing: -3px;
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
-    image-rendering: crisp-edges;
-}
-
-@media (max-width: 768px) {
-    .pixel-font {
-        font-size: 1.8rem;
-        letter-spacing: -1px;
-    }
-}
-
 /* ===== ESTRUCTURA BASE ===== */
 body {
     background: var(--crt-bg);
@@ -87,28 +85,24 @@ body {
     z-index: 1;
 }
 
-/* ===== COMPONENTES PRINCIPALES ===== */
-.glow-text {
-    animation: text-glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes text-glow {
-    from { text-shadow: 0 0 5px var(--neon-green); }
-    to { text-shadow: 0 0 15px var(--neon-green); }
-}
-
-.retro-list a {
-    color: var(--neon-green);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.retro-list a:hover {
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3 {
     color: var(--neon-yellow);
-    text-shadow: var(--glow) var(--neon-green);
-    transform: translateX(5px);
+    text-shadow: var(--glow) var(--neon-yellow);
+    margin: 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px dashed var(--neon-green);
 }
 
+h1 { 
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* ===== COMPONENTES PRINCIPALES ===== */
 .warning {
     background: #220000;
     border: 2px dashed var(--neon-red);
@@ -185,7 +179,7 @@ pre {
 }
 
 .retro-list li::before {
-    content: "\25B8"; /* Carácter Unicode más confiable */
+    content: "\25B8";
     color: var(--neon-green);
     position: absolute;
     left: -1.5rem;
@@ -228,117 +222,6 @@ pre {
     color: var(--neon-cyan);
 }
 
-/* ===== COMPONENTES UNIFICADOS ===== */
-.content-box {
-    background: rgba(0, 20, 0, 0.3);
-    border: 2px solid var(--neon-green);
-    padding: 1.5rem;
-    margin: 1.2rem 0;
-    position: relative;
-    z-index: 1; /* Añadido para contexto de apilamiento */
-}
-
-.hierarchical-list {
-    list-style: none;
-    padding-left: 2rem;
-}
-
-.hierarchical-list li {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.hierarchical-list li::before {
-    content: "\25B8";
-    position: absolute;
-    left: 0;
-    color: var(--neon-green);
-}
-
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 3px;
-    height: calc(100% - 20px);
-    background: var(--neon-green);
-    margin: 10px 0;
-}
-
-.timeline-item {
-    margin: 2rem 0;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -2.8rem;
-    top: 0;
-    width: 2rem;
-    height: 2rem;
-    background: var(--neon-green);
-    color: #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid var(--neon-green);
-}
-
-.stat-value {
-    font-size: 2rem;
-    color: var(--neon-yellow);
-    text-shadow: 0 0 10px var(--neon-yellow);
-}
-
-.myth-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.myth-card {
-    padding: 1.5rem;
-    border: 1px solid var(--neon-red);
-    background: rgba(64, 0, 0, 0.2);
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2); /* Añadido efecto glow */
-}
-
-.myth-header {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.myth-reality {
-    display: flex;
-    gap: 0.8rem;
-    align-items: center;
-    color: var(--neon-green);
-}
-
 /* ===== EFECTOS ESPECIALES ===== */
 .glow-text {
     animation: text-glow 1.5s ease-in-out infinite alternate;
@@ -349,41 +232,24 @@ pre {
     to { text-shadow: 0 0 15px var(--neon-green); }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
     }
 
+    .pixel-font {
+        font-size: 1.8rem;
+        letter-spacing: -1px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
     .nav-buttons {
         flex-direction: column;
         gap: 1rem;
-    }
-
-    .step-item {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
-    .step-content {
-        border-left: none;
-        border-top: 3px solid var(--neon-green);
-        padding-left: 0;
-        padding-top: 1rem;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .myth-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -393,3 +259,5 @@ pre {
 .mt-2 { margin-top: 2rem; }
 .mb-2 { margin-bottom: 2rem; }
 .pixel-border { border: 2px solid var(--neon-green); }
+.neon-green { color: var(--neon-green); }
+.neon-red { color: var(--neon-red); }
