@@ -3,141 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 4 - Controladores</title>
+    <title>Capítulo 4: Dominando los Mandos</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 4: Dominando los Mandos</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 4: Dominando los Mandos</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🟠 Intermedio | Duración: 40 min</pre>
+            </div>
+        </header>
 
-        <!-- 4.1 Tipos de Controladores -->
-        <h2>4.1 Universo de Controladores</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Tipo</th>
-                <th>Ejemplos</th>
-                <th>Compatibilidad</th>
-            </tr>
-            <tr>
-                <td>🎮 Modernos</td>
-                <td>Xbox Series X|S, PS5 DualSense</td>
-                <td>Plug & Play</td>
-            </tr>
-            <tr>
-                <td>🕹️ Retro</td>
-                <td>SNES USB, Arcade Sticks</td>
-                <td>Requieren configuración</td>
-            </tr>
-            <tr>
-                <td>📱 Táctiles</td>
-                <td>Pantallas móviles</td>
-                <td>Auto-detec. en Android/iOS</td>
-            </tr>
-        </table>
+        <article class="retro-article mt-2">
+            <!-- Sección 4.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Universo de Controladores</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Ejemplos</th>
+                            <th>Compatibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-green">🎮 Modernos</span></td>
+                            <td>Xbox Series X|S, PS5 DualSense</td>
+                            <td>✅ Plug & Play</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-green">🕹️ Retro</span></td>
+                            <td>SNES USB, Arcade Sticks</td>
+                            <td>⚙️ Configuración manual</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-green">📱 Táctiles</span></td>
+                            <td>Pantallas móviles</td>
+                            <td>🤖 Auto-detección</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 4.2 Configuración de Mandos Modernos -->
-        <h2>4.2 Configuración Paso a Paso</h2>
-        <div class="warning">
-            <pre>
-1. Conectar mando vía USB/Bluetooth
-2. Ir a: Settings → Input → Port 1 Controls
-3. Seleccionar "Autoconfiguración"
-4. Probar todos los botones
-5. Guardar perfil → MiMandoXbox.cfg</pre>
-        </div>
-        <p>💡 <em>Usar <strong>Input Poll Type</strong> = Early para menos latencia</em></p>
+            <!-- Sección 4.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Configuración Paso a Paso</h2>
+                <div class="content-box">
+                    <pre class="neon-yellow">
+1. Conectar mando (USB/Bluetooth)
+2. Settings → Input → Port 1 Controls
+3. Autoconfiguración
+4. Probar botones
+5. Guardar como MiMandoXbox.cfg</pre>
+                    <div class="myth-card mt-2">
+                        <div class="myth-header">
+                            <span class="neon-cyan">💡</span>
+                            <h3 class="subsection-title">Consejo Pro</h3>
+                        </div>
+                        <p class="retro-list">Usar <strong>Input Poll Type = Early</strong> para menos latencia</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 4.3 Mandos Genéricos -->
-        <h2>4.3 Solución para Mandos No-Reconocidos</h2>
-        <div class="retro-list">
-            <ul>
-                <li>Identificar el mando con <a href="https://gamepad-tester.com" target="_blank">Gamepad Tester</a></li>
-                <li>Mapeo manual en <code>Settings → Input → Manual Mapping</code></li>
-                <li>Usar <strong>x360ce</strong> para emular Xbox 360</li>
-            </ul>
-        </div>
+            <!-- Sección 4.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Mandos No-Reconocidos</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🔍</span>
+                            <h3 class="subsection-title">Identificación</h3>
+                        </div>
+                        <a href="https://gamepad-tester.com" 
+                           target="_blank" 
+                           class="nav-button"
+                           style="margin: 0.5rem 0;">
+                            Gamepad Tester Online
+                        </a>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🛠️</span>
+                            <h3 class="subsection-title">Mapeo Manual</h3>
+                        </div>
+                        <pre class="retro-list">Settings → Input → Manual Mapping</pre>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🎮</span>
+                            <h3 class="subsection-title">Emulación</h3>
+                        </div>
+                        <p class="retro-list">Usar x360ce para mandos genéricos</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 4.4 Teclado -->
-        <h2>4.4 Configuración Profesional de Teclado</h2>
-        <pre>
-Settings → Input → Port 1 Binds
-   ↑ → W
-   ↓ → S
-   ← → A
-   → → D
-   A → K
-   B → L
-   Guardar como Perfil WASD</pre>
+            <!-- Sección 4.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Teclado Profesional</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li><strong>Direccionales:</strong> W-A-S-D</li>
+                        <li><strong>Botones:</strong> K-L (A-B)</li>
+                        <li><strong>Guardar:</strong> Perfil WASD</li>
+                    </ul>
+                </div>
+                <div class="warning mt-2">
+                    <pre>Configuración avanzada en: Settings → Input → Port 1 Binds</pre>
+                </div>
+            </div>
 
-        <!-- 4.5 Pantalla Táctil -->
-        <h2>4.5 Optimización Móvil</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Ajuste</th>
-                <th>Valor Ideal</th>
-                <th>Efecto</th>
-            </tr>
-            <tr>
-                <td>Opacidad</td>
-                <td>60%</td>
-                <td>Mejor visibilidad</td>
-            </tr>
-            <tr>
-                <td>Tamaño Botones</td>
-                <td>120%</td>
-                <td>Precisión táctil</td>
-            </tr>
-            <tr>
-                <td>Vibración</td>
-                <td>Desactivado</td>
-                <td>Ahorro de batería</td>
-            </tr>
-        </table>
+            <!-- Sección 4.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Optimización Móvil</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">60%</div>
+                        <div class="subsection-title">Opacidad</div>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">120%</div>
+                        <div class="subsection-title">Tamaño</div>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-yellow">🚫</div>
+                        <div class="subsection-title">Vibración</div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 4.6 Problemas Comunes -->
-        <h2>4.6 La Clínica del Mando</h2>
-        <div class="warning">
-            <table class="retro-table">
-                <tr>
-                    <th>Síntoma</th>
-                    <th>Diagnóstico</th>
-                    <th>Solución</th>
-                </tr>
-                <tr>
-                    <td>Botones invertidos</td>
-                    <td>Mapeo incorrecto</td>
-                    <td>Reasignar manualmente</td>
-                </tr>
-                <tr>
-                    <td>Input Lag</td>
-                    <td>Latencia alta</td>
-                    <td>Activar Threaded Video</td>
-                </tr>
-                <tr>
-                    <td>Vibración fantasma</td>
-                    <td>Driver corrupto</td>
-                    <td>Reinstalar drivers</td>
-                </tr>
-            </table>
-        </div>
+            <!-- Sección 4.6 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Clínica del Mando</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🔄</span>
+                            <h3 class="subsection-title">Botones Invertidos</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Reasignar manualmente</li>
+                            <li>Verificar perfil</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">⏱️</span>
+                            <h3 class="subsection-title">Input Lag</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Threaded Video ON</li>
+                            <li>Frame Delay 2</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">👻</span>
+                            <h3 class="subsection-title">Vibración Fantasma</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Reinstalar drivers</li>
+                            <li>Desactivar en settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-        <!-- Navegación -->
-        <div class="nav-buttons">
+        <div class="nav-buttons mt-2">
             <a href="capitulo-3.html" class="nav-button">« Capítulo 3</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-5.html" class="nav-button">Capítulo 5 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Controles configurados con éxito! 🎮✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
-            <div class="pixel-border mt-1" style="padding: 5px;">
-                <pre>Pro Tip: Usa "Input Auto-Detect Interval" para switches múltiples</pre>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¡Controles dominados! 🎮 <a href="capitulo-5.html" 
+                   style="color:#0f0;text-decoration:none;">Siguiente: BIOS y Cores</a></pre>
+                <div class="mt-1" style="color: #0f0; text-align: center;">
+                    Creado por orochi_iory con DeepSeek-R1
+                </div>
             </div>
         </footer>
     </div>
+
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
