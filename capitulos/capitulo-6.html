@@ -3,149 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 6 - Gestión de ROMs</title>
+    <title>Capítulo 6: Gestión de ROMs</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 6: El Arte de Organizar ROMs</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 6: El Arte de Organizar ROMs</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🟠 Intermedio | Duración: 55 min</pre>
+            </div>
+        </header>
 
-        <!-- 6.1 Estructura Perfecta -->
-        <h2>6.1 Sistema de Archivos Profesional</h2>
-        <div class="warning">
-            <pre>
+        <article class="retro-article mt-2">
+            <!-- Sección 6.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Estructura Profesional</h2>
+                <div class="content-box">
+                    <pre class="neon-cyan">
 retroarch/
 ├── roms/
-│   ├── snes/
-│   │   ├── A-L/
-│   │   ├── M-Z/
-│   │   └── Traducciones/
-│   └── psx/
-│       ├── Juegos/
-│       └── Demos/
+│   ├── snes/ [A-L|M-Z|Traducciones]
+│   └── psx/ [Juegos|Demos]
 └── saves/
     ├── estados/
     └── sram/</pre>
-            <p>💡 Usa <strong>No-Intro</strong> para nombres estandarizados: <em>"Super Mario World (USA) (Rev 1).sfc"</em></p>
-        </div>
+                    <div class="myth-card mt-2">
+                        <div class="myth-header">
+                            <span class="neon-red">📁</span>
+                            <h3 class="subsection-title">Estándar No-Intro</h3>
+                        </div>
+                        <p class="retro-list">Ejemplo: "Super Mario World (USA) (Rev 1).sfc"</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 6.2 Formatos de ROMs -->
-        <h2>6.2 El Zodíaco de los Formatos</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Sistema</th>
-                <th>Formato Ideal</th>
-                <th>Herramienta</th>
-                <th>Tamaño Promedio</th>
-            </tr>
-            <tr>
-                <td>PlayStation</td>
-                <td>.chd</td>
-                <td>CHDMan</td>
-                <td>300-800MB</td>
-            </tr>
-            <tr>
-                <td>Nintendo DS</td>
-                <td>.nds</td>
-                <td>NDSTool</td>
-                <td>64-512MB</td>
-            </tr>
-            <tr>
-                <td>Sega CD</td>
-                <td>.bin/.cue</td>
-                <td>ISO Buster</td>
-                <td>500MB-1GB</td>
-            </tr>
-        </table>
+            <!-- Sección 6.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Zodíaco de Formatos</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Sistema</th>
+                            <th>Formato</th>
+                            <th>Herramienta</th>
+                            <th>Tamaño</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-red">📀</span> PlayStation</td>
+                            <td>.chd</td>
+                            <td>CHDMan</td>
+                            <td>300-800MB</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">📱</span> Nintendo DS</td>
+                            <td>.nds</td>
+                            <td>NDSTool</td>
+                            <td>64-512MB</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">🎮</span> Sega CD</td>
+                            <td>.bin/.cue</td>
+                            <td>ISO Buster</td>
+                            <td>500MB-1GB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 6.3 Scraping Automático -->
-        <h2>6.3 Biblioteca de Ensueño</h2>
-        <div class="retro-list">
-            <ul>
-                <li>Activar <strong>Actualizar Bases de Datos</strong> en Online Updater</li>
-                <li>Escaneo automático por CRC32</li>
-                <li>Configurar fuentes de metadatos:
-                    <pre>
-Settings → Playlists → Scraper
-   → Sources: IGDB, Screenscraper
-   → Campos: Boxart, Descripción, Ratings</pre>
-                </li>
-            </ul>
-        </div>
+            <!-- Sección 6.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Scraping Automático</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li>Actualizar Bases de Datos (Online Updater)</li>
+                        <li>Escaneo por CRC32/MD5</li>
+                        <li>Fuentes: IGDB, Screenscraper</li>
+                    </ul>
+                </div>
+                <div class="warning mt-2">
+                    <pre>Settings → Playlists → Scraper → Configurar campos</pre>
+                </div>
+            </div>
 
-        <!-- 6.4 Playlists Avanzadas -->
-        <h2>6.4 Playlists de Estudio</h2>
-        <div class="warning">
-            <pre>
-1. Crear archivo .lpl manualmente
-2. Sintaxis:
+            <!-- Sección 6.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Playlists Avanzadas</h2>
+                <div class="content-box">
+                    <pre class="neon-yellow">
 {
   "items": [
     {
       "path": "/roms/snes/SuperMarioWorld.sfc",
       "label": "Super Mario World",
       "core_path": "DETECT",
-      "core_name": "DETECT",
-      "db_name": "Super Mario World (USA).sfc.lpl"
+      "core_name": "DETECT"
     }
   ]
 }</pre>
-            <p>🚀 Usa <a href="https://github.com/meepdarknessmeep/PlaylistBuddy" target="_blank">Playlist Buddy</a> para gestión masiva</p>
-        </div>
+                    <a href="https://github.com/meepdarknessmeep/PlaylistBuddy" 
+                       target="_blank" 
+                       class="nav-button mt-2"
+                       style="display: block; text-align: center;">
+                        🚀 Descargar Playlist Buddy
+                    </a>
+                </div>
+            </div>
 
-        <!-- 6.5 Herramientas Pro -->
-        <h2>6.5 Suite de Gestión</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Herramienta</th>
-                <th>Función</th>
-                <th>Plataforma</th>
-            </tr>
-            <tr>
-                <td>Skraper</td>
-                <td>Descarga assets en 4K</td>
-                <td>Windows</td>
-            </tr>
-            <tr>
-                <td>RomVault</td>
-                <td>Verificar checksums</td>
-                <td>Multiplataforma</td>
-            </tr>
-            <tr>
-                <td>Retool</td>
-                <td>Renombrado masivo</td>
-                <td>Python</td>
-            </tr>
-        </table>
+            <!-- Sección 6.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Suite de Herramientas</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">🖼️</div>
+                        <div class="subsection-title">Skraper</div>
+                        <small>Assets 4K</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">✅</div>
+                        <div class="subsection-title">RomVault</div>
+                        <small>Verificación</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">🐍</div>
+                        <div class="subsection-title">Retool</div>
+                        <small>Renombrado</small>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 6.6 Recuperación de Datos -->
-        <h2>6.6 Cazando ROMs Rotas</h2>
-        <div class="warning">
-            <pre>
-1. Verificar checksum con <strong>ClrMAME Pro</strong>
-2. Reparar con:
-   → <a href="https://www.romvault.com/" target="_blank">RomVault</a> (para sets completos)
-   → <a href="https://github.com/mkubecek/splitdump" target="_blank">splitdump</a> (para .split)</pre>
-            <p>⚠️ <strong>Dato:</strong> 78% de ROMs en Internet están corruptas</p>
-        </div>
+            <!-- Sección 6.6 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Recuperación de ROMs</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🔍</span>
+                            <h3 class="subsection-title">Verificación</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>ClrMAME Pro</li>
+                            <li>Checksum CRC32</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🔧</span>
+                            <h3 class="subsection-title">Reparación</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>RomVault</li>
+                            <li>splitdump</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="warning mt-2">
+                    <p class="neon-red">⚠️ 78% de ROMs en Internet están corruptas</p>
+                </div>
+            </div>
+        </article>
 
-        <!-- Navegación -->
-        <div class="nav-buttons">
+        <div class="nav-buttons mt-2">
             <a href="capitulo-5.html" class="nav-button">« Capítulo 5</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-7.html" class="nav-button">Capítulo 7 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Biblioteca organizada como museo retro! 📚✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
-            <div class="pixel-border mt-1" style="padding: 5px;">
-                <pre>Descarga DATs oficiales: <a href="https://datomatic.no-intro.org" target="_blank">No-Intro Database</a></pre>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¡Biblioteca de museo! 📚 <a href="capitulo-7.html" 
+                   style="color:#0f0;text-decoration:none;">Siguiente: Netplay y Multijugador</a></pre>
+                <div class="mt-1" style="text-align: center;">
+                    <a href="https://datomatic.no-intro.org" 
+                       target="_blank" 
+                       class="nav-button"
+                       style="padding: 0.5rem;">
+                        Base de Datos No-Intro
+                    </a>
+                </div>
+                <div class="mt-1 neon-green" style="text-align: center;">
+                    Creado por orochi_iory con DeepSeek-R1
+                </div>
             </div>
         </footer>
     </div>
+
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
