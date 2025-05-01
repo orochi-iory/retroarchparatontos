@@ -103,6 +103,18 @@ h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 
 /* ===== COMPONENTES PRINCIPALES ===== */
+.retro-list a:link,
+.retro-list a:visited,
+.retro-list a {
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.retro-list a:hover {
+    color: var(--neon-yellow) !important;
+    text-shadow: var(--glow) var(--neon-green);
+    transform: translateX(5px);
+}
 .warning {
     background: #220000;
     border: 2px dashed var(--neon-red);
