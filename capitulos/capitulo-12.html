@@ -150,15 +150,15 @@
 
         <!-- Footer Especial -->
         <footer class="footer mt-2">
-            <div class="pixel-border" style="padding: 5px;">
-                <div id="creditos" class="neon-green">
-                    <pre>"El futuro retro está en tus manos" - orochi_iory 🕹️</pre>
-                    <pre>¿Encontraste errores? ¡Contribuye! <a href="https://github.com/tuusuario/emulacion-para-torpes" style="color:#0f0">GitHub</a></pre>
-                    <pre>Música final: "8 Bit Nostalgia" by David Renda</pre>
-                    <pre>Descarga legal en <a href="https://www.fesliyanstudios.com" style="color:#0f0">FesliyanStudios.com</a></pre>
-                </div>
-            </div>
-        </footer>
+    <div class="pixel-border" style="padding: 5px;">
+        <div id="creditos">
+            <pre>"El futuro retro está en tus manos" - <span id="author-credit">orochi_iory</span> 🕹️</pre>
+            <pre>¿Encontraste errores? ¡Contribuye! <a href="https://github.com/tuusuario/emulacion-para-torpes" style="color:#0f0">GitHub</a></pre>
+            <pre>Música final: "8 Bit Nostalgia" by David Renda</pre>
+            <pre>Descarga legal en <a href="https://www.fesliyanstudios.com" style="color:#0f0">FesliyanStudios.com</a></pre>
+        </div>
+    </div>
+</footer>
     </div>
 
     <!-- Efectos Especiales -->
@@ -173,11 +173,11 @@
             });
         };
         
-        // Efecto de texto parpadeante
-        const creditos = document.getElementById('creditos');
-        setInterval(() => {
-            creditos.style.visibility = creditos.style.visibility === 'hidden' ? 'visible' : 'hidden';
-        }, 1000);
+       // Efecto de texto parpadeante solo para el crédito del autor
+    const authorCredit = document.getElementById('author-credit');
+    setInterval(() => {
+        authorCredit.style.visibility = authorCredit.style.visibility === 'hidden' ? 'visible' : 'hidden';
+    }, 1000);
 
         // Alerta retro personalizada
         const showRetroAlert = () => {
