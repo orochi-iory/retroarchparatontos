@@ -1,4 +1,4 @@
-/* retro.css - Tema CRT Retro Final */
+/* retro.css - Versión Final 3.0 */
 /* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
@@ -17,7 +17,7 @@
 }
 
 /* ===== FUENTES PIXEL ===== */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=Press+Start+2P&display=swap');
 
 /* ===== EFECTOS CRT ===== */
 .crt-overlay {
@@ -35,7 +35,7 @@
     );
     pointer-events: none;
     z-index: 999;
-    animation: scanline 6s linear infinite;
+    animation: scanline 8s linear infinite;
 }
 
 @keyframes scanline {
@@ -44,13 +44,12 @@
 }
 
 .crt-flicker {
-    animation: flicker 0.15s infinite;
+    animation: flicker 0.12s infinite;
 }
 
 @keyframes flicker {
-    0% { opacity: 0.95; }
+    0%, 100% { opacity: 0.92; }
     50% { opacity: 1; }
-    100% { opacity: 0.98; }
 }
 
 /* ===== ESTRUCTURA BASE ===== */
@@ -58,11 +57,10 @@ body {
     background: var(--crt-bg);
     color: var(--neon-green);
     font-family: 'Courier New', monospace;
-    line-height: 1.6;
+    line-height: 1.5;
     overflow-x: hidden;
-    counter-reset: section;
     -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: none;
 }
 
 .container {
@@ -80,46 +78,51 @@ h1, h2, h3,
 .nav-button {
     font-family: 'Silkscreen', 'Press Start 2P', cursive;
     text-rendering: geometricPrecision;
-    image-rendering: pixelated;
+    image-rendering: crisp-edges;
     letter-spacing: -2px;
+    margin: 1.2rem 0;
 }
 
 h1 {
-    font-size: 2.5rem;
-    text-shadow: 3px 3px 0 var(--neon-red);
-    margin: 1.5rem 0;
-    line-height: 1.1;
+    font-size: 2.6rem;
+    text-shadow: 
+        3px 3px 0 var(--neon-red),
+        0 0 15px var(--neon-green);
+    line-height: 1;
+    border-bottom: 4px dashed var(--neon-green);
+    padding-bottom: 0.8rem;
 }
 
 h2 {
     font-size: 2rem;
-    text-shadow: 2px 2px 0 var(--neon-cyan);
-    border-bottom: 3px dashed var(--neon-green);
-    padding-bottom: 0.5rem;
+    text-shadow: 
+        2px 2px 0 var(--neon-cyan),
+        0 0 10px var(--neon-green);
+    border-bottom: 3px dotted var(--neon-green);
+    padding: 0.6rem 0;
 }
 
 h3 {
-    font-size: 1.6rem;
-    text-shadow: 1px 1px 0 var(--neon-yellow);
+    font-size: 1.4rem;
+    text-shadow: 
+        1px 1px 0 var(--neon-yellow),
+        0 0 8px var(--neon-green);
 }
 
-/* ===== ENLACES Y LISTAS ===== */
-.retro-list a:link,
-.retro-list a:visited,
-.retro-list a:active {
-    color: var(--neon-green) !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* ===== COMPONENTES ===== */
+.pixel-border {
+    border: 3px solid var(--neon-green);
+    box-shadow: 0 0 12px var(--neon-green);
+    margin: 1rem 0;
 }
 
-.retro-list a:hover {
-    color: var(--neon-yellow) !important;
-    text-shadow: var(--glow) var(--neon-green);
-    transform: translateX(5px);
+.retro-list {
+    list-style: none;
+    padding-left: 2rem;
 }
 
 .retro-list li {
-    margin: 1rem 0;
+    margin: 1.2rem 0;
     position: relative;
     padding-left: 1.5rem;
 }
@@ -128,48 +131,53 @@ h3 {
     content: ">";
     color: var(--neon-green);
     position: absolute;
-    left: 0;
-    font-family: 'Press Start 2P', cursive;
+    left: -1.5rem;
+    font-family: 'Silkscreen', monospace;
+    text-shadow: 0 0 8px var(--neon-green);
 }
 
-/* ===== COMPONENTES ===== */
+/* ===== ENLACES Y BOTONES ===== */
+.retro-list a,
+.nav-button {
+    color: var(--neon-green);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.retro-list a:hover,
+.nav-button:hover {
+    color: var(--neon-yellow);
+    text-shadow: var(--glow) var(--neon-green);
+    transform: translateX(6px) skewX(-8deg);
+}
+
 .nav-button {
     background: #002200;
-    border: 2px solid var(--neon-green);
-    color: var(--neon-green);
-    padding: 0.8rem 1.5rem;
-    text-shadow: 2px 2px 0 var(--neon-red);
-    transition: all 0.3s ease;
-}
-
-.nav-button:hover {
-    background: #004400;
-    transform: translateX(5px) skewX(-5deg);
-}
-
-.pixel-border {
     border: 3px solid var(--neon-green);
-    box-shadow: 0 0 10px var(--neon-green);
+    padding: 1rem 2rem;
+    margin: 0.8rem 0;
+    display: inline-block;
+    font-size: 1.1rem;
+    letter-spacing: -1px;
 }
 
 /* ===== ANIMACIONES ===== */
 @keyframes text-glow {
     0% { text-shadow: 0 0 5px var(--neon-green); }
-    100% { text-shadow: 0 0 15px var(--neon-green); }
+    100% { text-shadow: 0 0 20px var(--neon-green); }
 }
 
 .glow-text {
-    animation: text-glow 1.5s ease-in-out infinite alternate;
+    animation: text-glow 1.2s ease-in-out infinite alternate;
 }
 
 @keyframes pixel-vibration {
-    0% { transform: translate(0.5px, -0.5px); }
-    50% { transform: translate(-0.5px, 0.5px); }
-    100% { transform: translate(0.5px, -0.5px); }
+    0%, 100% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
 }
 
 h1:hover, h2:hover, h3:hover {
-    animation: pixel-vibration 0.1s infinite;
+    animation: pixel-vibration 0.15s infinite;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -181,6 +189,7 @@ h1:hover, h2:hover, h3:hover {
     h1 {
         font-size: 1.8rem;
         letter-spacing: -1px;
+        padding-bottom: 0.5rem;
     }
 
     h2 {
@@ -188,11 +197,16 @@ h1:hover, h2:hover, h3:hover {
     }
 
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .nav-button {
-        padding: 0.6rem 1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .retro-list li {
+        padding-left: 1rem;
     }
 }
 
@@ -200,6 +214,6 @@ h1:hover, h2:hover, h3:hover {
 .text-center { text-align: center; }
 .mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
-.mb-2 { margin-bottom: 2rem; }
 .neon-green { color: var(--neon-green); }
 .neon-red { color: var(--neon-red); }
+pre { white-space: pre-wrap; }
