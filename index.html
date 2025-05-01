@@ -9,6 +9,24 @@
         <source src="sfx/hover.wav" type="audio/wav">
         <source src="sfx/hover.mp3" type="audio/mpeg">
     </audio>
+    <style>
+        /* Estilos específicos para el índice */
+        .retro-list a {
+            color: var(--neon-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .retro-list a:hover {
+            color: var(--neon-yellow);
+            text-shadow: var(--glow) var(--neon-green);
+            transform: translateX(5px);
+        }
+
+        .retro-list a:visited {
+            color: var(--neon-green); /* Mantener mismo color para visitados */
+        }
+    </style>
 </head>
 <body>
     <div class="crt-overlay"></div>
@@ -68,7 +86,7 @@
 
         <footer class="footer mt-2">
             <div class="pixel-border" style="padding: 5px;">
-                <pre>Proyecto Open Source - ¡Contribuciones bienvenidas! <a href="https://github.com/orochi-iory/retroarchparatontos" style="color:#0f0">GitHub</a></pre>
+                <pre>Proyecto Open Source - ¡Contribuciones bienvenidas! <a href="https://github.com/orochi-iory/retroarchparatontos" class="neon-link">GitHub</a></pre>
                 <div class="mt-1 neon-green" style="text-align: center;">
                     Creado por orochi_iory con DeepSeek-R1
                 </div>
