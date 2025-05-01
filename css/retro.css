@@ -1,4 +1,4 @@
-/* retro.css - Versión 3.2 Final */
+/* retro.css - Versión 4.0 (Sombra Blanca) */
 /* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 :root {
     --neon-green: #00ff00;
     --neon-yellow: #ffff00;
-    --neon-red: #ff0000;
+    --neon-white: #ffffff;
     --neon-cyan: #00ffff;
     --crt-bg: #000;
     --scanline: rgba(0, 255, 0, 0.05);
@@ -86,7 +86,7 @@ h1 {
     color: var(--neon-green);
     font-size: 2.6rem;
     text-shadow: 
-        3px 3px 0 var(--neon-red),
+        3px 3px 0 var(--neon-white),
         0 0 15px var(--neon-green);
     border-bottom: 4px dashed var(--neon-green);
     padding-bottom: 0.8rem;
@@ -96,7 +96,7 @@ h2 {
     color: var(--neon-yellow);
     font-size: 2rem;
     text-shadow: 
-        2px 2px 0 var(--neon-red),
+        2px 2px 0 var(--neon-white),
         0 0 12px var(--neon-yellow);
     border-bottom: 3px dotted var(--neon-yellow);
     padding: 0.6rem 0;
@@ -106,11 +106,11 @@ h3 {
     color: var(--neon-cyan);
     font-size: 1.4rem;
     text-shadow: 
-        1px 1px 0 var(--neon-red),
+        1px 1px 0 var(--neon-white),
         0 0 10px var(--neon-cyan);
 }
 
-/* ===== COMPONENTES ===== */
+/* ===== COMPONENTES COMUNES ===== */
 .pixel-border {
     border: 3px solid var(--neon-yellow);
     box-shadow: 0 0 12px var(--neon-yellow);
@@ -138,6 +138,45 @@ h3 {
     text-shadow: 0 0 8px var(--neon-yellow);
 }
 
+/* ===== TABLAS Y ESTADÍSTICAS ===== */
+.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border: 2px solid var(--neon-yellow);
+}
+
+.retro-table th,
+.retro-table td {
+    padding: 0.8rem;
+    border: 1px solid var(--neon-yellow);
+    text-align: left;
+}
+
+.retro-table th {
+    background: #002200;
+    text-transform: uppercase;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid var(--neon-yellow);
+}
+
+.stat-value {
+    font-size: 2rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px var(--neon-yellow);
+}
+
 /* ===== BOTONES Y ENLACES ===== */
 .nav-button {
     background: #002200;
@@ -163,7 +202,7 @@ h3 {
     color: var(--neon-yellow);
     text-shadow: 
         0 0 15px var(--neon-yellow),
-        2px 2px 0 var(--neon-red);
+        2px 2px 0 var(--neon-white);
     transform: translateX(6px) skewX(-8deg);
 }
 
@@ -195,15 +234,12 @@ h1:hover, h2:hover, h3:hover {
     h1 {
         font-size: 1.8rem;
         text-shadow: 
-            2px 2px 0 var(--neon-red),
+            2px 2px 0 var(--neon-white),
             0 0 12px var(--neon-green);
     }
 
     h2 {
         font-size: 1.4rem;
-        text-shadow: 
-            1px 1px 0 var(--neon-red),
-            0 0 10px var(--neon-yellow);
     }
 
     h3 {
@@ -215,8 +251,8 @@ h1:hover, h2:hover, h3:hover {
         font-size: 0.9rem;
     }
 
-    .retro-list li {
-        padding-left: 1rem;
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -227,6 +263,7 @@ h1:hover, h2:hover, h3:hover {
 .neon-green { color: var(--neon-green); }
 .neon-yellow { color: var(--neon-yellow); }
 .neon-cyan { color: var(--neon-cyan); }
+.warning { border: 2px dashed var(--neon-yellow); padding: 1rem; }
 pre { 
     background: #002200;
     padding: 1rem;
