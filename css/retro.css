@@ -251,22 +251,8 @@ h1:hover, h2:hover, h3:hover {
     }
 
     .nav-button {
-    /* Espaciado interno (ajuste responsivo) */
-    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
-    
-    /* Tamaño de fuente adaptable */
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
-    
-    /* Borde dinámico */
-    border: 2px solid var(--neon-color);
-    border-radius: 4px; /* Esquinas ligeramente redondeadas */
-    
-    /* Transición suave */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
