@@ -1,4 +1,4 @@
-/* retro.css - Versión 4.0 (Sombra Blanca) */
+/* retro.css - Versión 4.2 Final (Pixel Perfect) */
 /* ===== RESET & VARIABLES ===== */
 * {
     margin: 0;
@@ -17,7 +17,7 @@
 }
 
 /* ===== FUENTES PIXEL ===== */
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* ===== EFECTOS CRT ===== */
 .crt-overlay {
@@ -56,11 +56,11 @@
 body {
     background: var(--crt-bg);
     color: var(--neon-green);
-    font-family: 'Courier New', monospace;
     line-height: 1.5;
     overflow-x: hidden;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: none;
+    font-family: 'Courier New', monospace;
 }
 
 .container {
@@ -71,30 +71,34 @@ body {
     z-index: 1;
 }
 
-/* ===== JERARQUÍA DE TÍTULOS ===== */
+/* ===== TIPOGRAFÍA PIXEL ===== */
 h1, h2, h3,
 .section-title,
 .subsection-title {
-    font-family: 'Silkscreen', 'Press Start 2P', cursive;
-    text-rendering: geometricPrecision;
-    image-rendering: crisp-edges;
+    font-family: 'Press Start 2P', cursive;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    text-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+    font-weight: normal;
+    letter-spacing: -1px;
     margin: 1.2rem 0;
-    letter-spacing: -2px;
 }
 
 h1 {
+    font-size: 2.4rem;
     color: var(--neon-green);
-    font-size: 2.6rem;
     text-shadow: 
         3px 3px 0 var(--neon-white),
         0 0 15px var(--neon-green);
     border-bottom: 4px dashed var(--neon-green);
     padding-bottom: 0.8rem;
+    line-height: 1.1;
 }
 
-h2 {
+h2.section-title {
+    font-size: 1.8rem;
     color: var(--neon-yellow);
-    font-size: 2rem;
     text-shadow: 
         2px 2px 0 var(--neon-white),
         0 0 12px var(--neon-yellow);
@@ -102,15 +106,15 @@ h2 {
     padding: 0.6rem 0;
 }
 
-h3 {
-    color: var(--neon-cyan);
+h3.subsection-title {
     font-size: 1.4rem;
+    color: var(--neon-cyan);
     text-shadow: 
         1px 1px 0 var(--neon-white),
         0 0 10px var(--neon-cyan);
 }
 
-/* ===== COMPONENTES COMUNES ===== */
+/* ===== COMPONENTES ===== */
 .pixel-border {
     border: 3px solid var(--neon-yellow);
     box-shadow: 0 0 12px var(--neon-yellow);
@@ -134,8 +138,8 @@ h3 {
     color: var(--neon-yellow);
     position: absolute;
     left: -1.5rem;
-    font-family: 'Silkscreen', monospace;
     text-shadow: 0 0 8px var(--neon-yellow);
+    font-family: 'Press Start 2P', cursive;
 }
 
 /* ===== TABLAS Y ESTADÍSTICAS ===== */
@@ -151,11 +155,6 @@ h3 {
     padding: 0.8rem;
     border: 1px solid var(--neon-yellow);
     text-align: left;
-}
-
-.retro-table th {
-    background: #002200;
-    text-transform: uppercase;
 }
 
 .stats-grid {
@@ -225,6 +224,14 @@ h1:hover, h2:hover, h3:hover {
     animation: pixel-vibration 0.15s infinite;
 }
 
+/* ===== CORRECCIÓN RENDERIZADO WEBKIT ===== */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    h1, h2, h3 {
+        -webkit-font-smooth: never;
+        -webkit-text-stroke: 0.5px;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .container {
@@ -233,16 +240,13 @@ h1:hover, h2:hover, h3:hover {
 
     h1 {
         font-size: 1.8rem;
-        text-shadow: 
-            2px 2px 0 var(--neon-white),
-            0 0 12px var(--neon-green);
     }
 
-    h2 {
+    h2.section-title {
         font-size: 1.4rem;
     }
 
-    h3 {
+    h3.subsection-title {
         font-size: 1.1rem;
     }
 
