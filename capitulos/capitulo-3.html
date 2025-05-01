@@ -3,124 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 3 - Configuración Avanzada</title>
+    <title>Capítulo 3: Configuración Avanzada</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 3: Dominando la Configuración</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 3: Dominando la Configuración</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🔴 Avanzado | Duración: 60 min</pre>
+            </div>
+        </header>
 
-        <!-- 3.1 Interfaz de Usuario -->
-        <h2>3.1 Personalización de la Interfaz</h2>
-        <div class="warning">
-            <pre>
+        <article class="retro-article mt-2">
+            <!-- Sección 3.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Personalización de Interfaz</h2>
+                <div class="content-box">
+                    <pre class="neon-yellow">
 Settings → User Interface → Menu
    → Menu Driver: ozone
    → Menu Scale Factor: 1.5x
    → Menu Color Theme: Classic Green</pre>
-        </div>
-        <p>💡 <em>Usa XMB para una experiencia tipo PlayStation 3</em></p>
+                    <div class="myth-card mt-2">
+                        <div class="myth-header">
+                            <span class="neon-cyan">💡</span>
+                            <h3 class="subsection-title">Consejo Pro</h3>
+                        </div>
+                        <p class="retro-list">Usa XMB para una experiencia tipo PlayStation 3</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 3.2 Gestión de Drivers -->
-        <h2>3.2 Configuración de Drivers</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Driver</th>
-                <th>Recomendado</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td>Video</td>
-                <td>Vulkan</td>
-                <td>Máximo rendimiento para GPUs modernas</td>
-            </tr>
-            <tr>
-                <td>Audio</td>
-                <td>ALSA (Linux)<br>WASAPI (Windows)</td>
-                <td>Baja latencia</td>
-            </tr>
-            <tr>
-                <td>Input</td>
-                <td>udev (Linux)<br>XInput (Windows)</td>
-                <td>Soporte para mandos modernos</td>
-            </tr>
-        </table>
+            <!-- Sección 3.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Configuración de Drivers</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Driver</th>
+                            <th>Recomendado</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-red">🎮</span> Video</td>
+                            <td>Vulkan</td>
+                            <td>Máximo rendimiento para GPUs modernas</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">🔊</span> Audio</td>
+                            <td>ALSA/WASAPI</td>
+                            <td>Baja latencia</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">🕹️</span> Input</td>
+                            <td>udev/XInput</td>
+                            <td>Soporte para mandos modernos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 3.3 Atajos Esenciales -->
-        <h2>3.3 Atajos de Teclado/Mando</h2>
-        <div class="retro-list">
-            <ul>
-                <li>F1 → Menú rápido</li>
-                <li>F2 → Guardar estado</li>
-                <li>F4 → Cargar estado</li>
-                <li>L3 + R3 → Resetear juego</li>
-            </ul>
-        </div>
-        <pre class="mt-1">
-Settings → Input → Hotkeys
-   → Configure cada atajo según preferencias</pre>
+            <!-- Sección 3.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Atajos Esenciales</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">F1</div>
+                        <div class="subsection-title">Menú rápido</div>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">F2/F4</div>
+                        <div class="subsection-title">Guardar/Cargar estado</div>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-green">L3+R3</div>
+                        <div class="subsection-title">Resetear juego</div>
+                    </div>
+                </div>
+                <div class="warning mt-2">
+                    <pre>Settings → Input → Hotkeys → Personalizar atajos</pre>
+                </div>
+            </div>
 
-        <!-- 3.4 Optimización de Rendimiento -->
-        <h2>3.4 Ajustes para Hardware Limitado</h2>
-        <div class="warning">
-            <pre>
-Settings → Video
-   → Threaded Video: ON
-   → VSync: OFF
-   → Hard GPU Sync: ON
-   → Frame Delay: 2</pre>
-            <p>⚠️ <strong>Nota:</strong> Aumentar Frame Delay puede causar inestabilidad</p>
-        </div>
+            <!-- Sección 3.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Optimización de Rendimiento</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">⚡</span>
+                            <h3 class="subsection-title">Ajustes Clave</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Threaded Video: ON</li>
+                            <li>VSync: OFF</li>
+                            <li>Frame Delay: 2</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">⚠️</span>
+                            <h3 class="subsection-title">Advertencias</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Evitar Frame Delay > 3</li>
+                            <li>Testear estabilidad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 3.5 Configuración de Shaders -->
-        <h2>3.5 Preconfiguraciones Gráficas</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Tipo</th>
-                <th>Shader Recomendado</th>
-                <th>Uso</th>
-            </tr>
-            <tr>
-                <td>CRT</td>
-                <td>crt-royale</td>
-                <td>Autenticidad arcade</td>
-            </tr>
-            <tr>
-                <td>HD</td>
-                <td>xBRZ-Freescale</td>
-                <td>Juegos 2D en 4K</td>
-            </tr>
-            <tr>
-                <td>Portátil</td>
-                <td>lcd-grid</td>
-                <td>Simular Game Boy</td>
-            </tr>
-        </table>
+            <!-- Sección 3.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Magia con Shaders</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Estilo</th>
+                            <th>Shader</th>
+                            <th>Uso Recomendado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-cyan">CRT</span></td>
+                            <td>crt-royale</td>
+                            <td>Arcade auténtico</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-cyan">HD</span></td>
+                            <td>xBRZ-Freescale</td>
+                            <td>Juegos 2D en 4K</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-cyan">Portátil</span></td>
+                            <td>lcd-grid</td>
+                            <td>Efecto Game Boy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 3.6 Perfiles de Configuración -->
-        <h2>3.6 Gestión de Perfiles</h2>
-        <div class="retro-list">
-            <ul>
-                <li>💾 Guardar configuración global: <code>Main Menu → Configuration File → Save</code></li>
-                <li>🎮 Perfiles por núcleo: <code>Quick Menu → Overrides → Save Core Overrides</code></li>
-                <li>🕹️ Perfiles por juego: <code>Quick Menu → Overrides → Save Game Overrides</code></li>
-            </ul>
-        </div>
+            <!-- Sección 3.6 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Gestión de Perfiles</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li><strong>Configuración Global:</strong> Main Menu → Configuration File → Save</li>
+                        <li><strong>Por Núcleo:</strong> Quick Menu → Overrides → Save Core Overrides</li>
+                        <li><strong>Por Juego:</strong> Quick Menu → Overrides → Save Game Overrides</li>
+                    </ul>
+                </div>
+                <div class="content-box mt-2">
+                    <div class="stats-grid">
+                        <div class="stat-item pixel-border">
+                            <div class="stat-value neon-yellow">💾</div>
+                            <div class="subsection-title">Backup Automático</div>
+                        </div>
+                        <div class="stat-item pixel-border">
+                            <div class="stat-value neon-yellow">🔄</div>
+                            <div class="subsection-title">Carga Automática</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-        <!-- Navegación -->
-        <div class="nav-buttons">
+        <div class="nav-buttons mt-2">
             <a href="capitulo-2.html" class="nav-button">« Capítulo 2</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-4.html" class="nav-button">Capítulo 4 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Configuración maestra completada! 🛠️✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¡Configuración maestra completada! 🛠️ <a href="capitulo-4.html" 
+                   style="color:#0f0;text-decoration:none;">¡A por los Cores!</a></pre>
+            </div>
         </footer>
     </div>
+
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
