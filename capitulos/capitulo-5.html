@@ -3,134 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 5 - Núcleos de Emulación</title>
+    <title>Capítulo 5: Núcleos de Emulación</title>
     <link rel="stylesheet" href="../css/retro.css">
+    <audio id="hover-sound">
+        <source src="../sfx/hover.wav" type="audio/wav">
+        <source src="../sfx/hover.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <div class="crt-overlay"></div>
     
     <div class="container crt-flicker">
-        <h1 class="glow-text">Capítulo 5: El Corazón de RetroArch</h1>
+        <header class="text-center">
+            <h1 class="glow-text">Capítulo 5: El Corazón de RetroArch</h1>
+            <div class="pixel-border mt-1" style="padding: 0.5rem;">
+                <pre>Nivel: 🟣 Experto | Duración: 50 min</pre>
+            </div>
+        </header>
 
-        <!-- 5.1 Qué son los núcleos -->
-        <h2>5.1 Anatomía de un Núcleo</h2>
-        <div class="warning">
-            <p>💾 <strong>Definición:</strong> Ejecutables que contienen todo el hardware virtual necesario para emular un sistema</p>
-            <pre>
+        <article class="retro-article mt-2">
+            <!-- Sección 5.1 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Anatomía de un Núcleo</h2>
+                <div class="content-box">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">💾</span>
+                            <h3 class="subsection-title">Definición Técnica</h3>
+                        </div>
+                        <pre class="neon-cyan">
 ┌──────────────────┐
 │  Núcleo          │
 │  ├ CPU Emulada   │
 │  ├ Chip de Audio │
 │  └ GPU Virtual   │
 └──────────────────┘</pre>
-        </div>
+                        <p class="retro-list mt-1">Ejecutable que contiene todo el hardware virtual necesario</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 5.2 Instalación de Núcleos -->
-        <h2>5.2 Descarga e Instalación</h2>
-        <pre>
-1. Menú Principal → Cargar Núcleo → Descargar Núcleo
-2. Buscar por sistema o nombre:
-   - Nintendo (SNES) → bsnes
-   - Sony (PS1) → Beetle PSX HW
-3. Instalación automática en:
-   <em>/retroarch/cores</em></pre>
-        <p>💡 Usa <strong>Online Updater → Actualizar Núcleos</strong> para mantenerlos al día</p>
+            <!-- Sección 5.2 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Instalación de Núcleos</h2>
+                <div class="retroarch-steps">
+                    <ul>
+                        <li>Menú Principal → Cargar Núcleo → Descargar</li>
+                        <li>Buscar por sistema: <em>bsnes</em> (SNES), <em>Beetle PSX</em> (PS1)</li>
+                        <li>Instalación automática en: <code>/retroarch/cores</code></li>
+                    </ul>
+                </div>
+                <div class="warning mt-2">
+                    <div class="myth-header">
+                        <span class="neon-yellow">💡</span>
+                        <h3 class="subsection-title">Mantenimiento</h3>
+                    </div>
+                    <p class="retro-list">Usa <strong>Online Updater → Actualizar Núcleos</strong> regularmente</p>
+                </div>
+            </div>
 
-        <!-- 5.3 Núcleos Recomendados -->
-        <h2>5.3 Selección de Élite</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Sistema</th>
-                <th>Núcleo</th>
-                <th>Foco</th>
-                <th>Requisitos</th>
-            </tr>
-            <tr>
-                <td>SNES</td>
-                <td>bsnes</td>
-                <td>Precisión 100%</td>
-                <td>CPU 4 núcleos</td>
-            </tr>
-            <tr>
-                <td>PS1</td>
-                <td>Beetle PSX HW</td>
-                <td>Gráficos HD</td>
-                <td>GPU Vulkan</td>
-            </tr>
-            <tr>
-                <td>N64</td>
-                <td>Mupen64Plus-Next</td>
-                <td>Compatibilidad</td>
-                <td>OpenGL 3.3+</td>
-            </tr>
-        </table>
+            <!-- Sección 5.3 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Selección Élite</h2>
+                <table class="retro-table">
+                    <thead>
+                        <tr>
+                            <th>Sistema</th>
+                            <th>Núcleo</th>
+                            <th>Foco</th>
+                            <th>Requisitos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="neon-red">🎮</span> SNES</td>
+                            <td>bsnes</td>
+                            <td>Precisión 100%</td>
+                            <td>CPU 4 núcleos</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">📀</span> PS1</td>
+                            <td>Beetle PSX HW</td>
+                            <td>Gráficos HD</td>
+                            <td>GPU Vulkan</td>
+                        </tr>
+                        <tr>
+                            <td><span class="neon-red">🦍</span> N64</td>
+                            <td>Mupen64Plus-Next</td>
+                            <td>Compatibilidad</td>
+                            <td>OpenGL 3.3+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- 5.4 Configuración Avanzada -->
-        <h2>5.4 Ajustes Específicos por Núcleo</h2>
-        <div class="retro-list">
-            <ul>
-                <li>🎮 Beetle PSX HW → Aumentar resolución interna a 8x</li>
-                <li>🖥️ bsnes → Activar "HD Mode 7" para efectos 3D</li>
-                <li>💾 mGBA → Overclock al 200% para juegos lentos</li>
-            </ul>
-        </div>
-        <div class="warning mt-1">
-            <pre>
-Quick Menu → Opciones
-   → Buscar parámetros específicos del núcleo
-   → Guardar como Override de Núcleo</pre>
-        </div>
+            <!-- Sección 5.4 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Ajustes Avanzados</h2>
+                <div class="myth-grid">
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🖥️</span>
+                            <h3 class="subsection-title">Beetle PSX HW</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Resolución interna 8x</li>
+                            <li>Filtrado anisotrópico</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">🔧</span>
+                            <h3 class="subsection-title">bsnes</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>HD Mode 7</li>
+                            <li>Desentrelazado</li>
+                        </ul>
+                    </div>
+                    <div class="myth-card">
+                        <div class="myth-header">
+                            <span class="neon-red">⚡</span>
+                            <h3 class="subsection-title">mGBA</h3>
+                        </div>
+                        <ul class="retro-list">
+                            <li>Overclock 200%</li>
+                            <li>Mejoras de sonido</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 5.5 Resolución de Problemas -->
-        <h2>5.5 La Sala de Emergencias</h2>
-        <table class="retro-table">
-            <tr>
-                <th>Error</th>
-                <th>Causa</th>
-                <th>Solución</th>
-            </tr>
-            <tr>
-                <td>❌ No carga ROM</td>
-                <td>Formato incompatible</td>
-                <td>Convertir a .chd/.cue</td>
-            </tr>
-            <tr>
-                <td>💥 Crash al iniciar</td>
-                <td>BIOS faltante</td>
-                <td>Colocar en /retroarch/system</td>
-            </tr>
-            <tr>
-                <td>🐌 Rendimiento pobre</td>
-                <td>Núcleo muy demandante</td>
-                <td>Usar versión ligera (Ej: Snes9x)</td>
-            </tr>
-        </table>
+            <!-- Sección 5.5 -->
+            <div class="section">
+                <h2 class="section-title glow-text">Sala de Emergencias</h2>
+                <div class="stats-grid">
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-red">❌</div>
+                        <div class="subsection-title">ROM no carga</div>
+                        <small>Convertir a .chd</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-red">💥</div>
+                        <div class="subsection-title">Falta BIOS</div>
+                        <small>Colocar en /system</small>
+                    </div>
+                    <div class="stat-item pixel-border">
+                        <div class="stat-value neon-red">🐌</div>
+                        <div class="subsection-title">Lentitud</div>
+                        <small>Usar núcleo ligero</small>
+                    </div>
+                </div>
+            </div>
 
-        <!-- 5.6 FAQ -->
-        <h2>5.6 Preguntas de la Comunidad</h2>
-        <div class="warning">
-            <p><strong>❓ ¿Son legales los núcleos?</strong><br>
-            ✅ Sí, son código abierto. Solo necesitas ROMs/BIOS legales.</p>
-            
-            <p><strong>❓ ¿Puedo usar múltiples núcleos para un sistema?</strong><br>
-            ✅ Sí, prueba diferentes núcleos para comparar rendimiento.</p>
-        </div>
+            <!-- Sección 5.6 -->
+            <div class="section">
+                <h2 class="section-title glow-text">FAQ Comunidad</h2>
+                <div class="ethics-section">
+                    <div class="myth-buster">
+                        <h3 class="subsection-title neon-yellow">¿Son legales?</h3>
+                        <p class="retro-list">✅ Sí, código abierto. ROMs/BIOS deben ser legales</p>
+                    </div>
+                    <div class="myth-buster mt-2">
+                        <h3 class="subsection-title neon-yellow">Múltiples núcleos</h3>
+                        <p class="retro-list">✅ Compara rendimiento y precisión</p>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-        <!-- Navegación -->
-        <div class="nav-buttons">
+        <div class="nav-buttons mt-2">
             <a href="capitulo-4.html" class="nav-button">« Capítulo 4</a>
-<a href="../index.html" class="nav-button">-- Índice Principal --</a>
+            <a href="../index.html" class="nav-button">Índice Principal</a>
             <a href="capitulo-6.html" class="nav-button">Capítulo 6 »</a>
         </div>
 
-        <!-- Footer -->
         <footer class="footer mt-2">
-            <p class="glow-text">¡Núcleos configurados con precisión! ⚛️✨</p>
-            <p class="glow-text">Creado por orochi_iory con DeepSeek-R1</p>
-            <div class="pixel-border mt-1" style="padding: 5px;">
-                <pre>Descarga núcleos experimentales: <a href="https://buildbot.libretro.com/nightly/" target="_blank">Nightly Builds</a></pre>
+            <div class="pixel-border" style="padding: 5px;">
+                <pre>¡Dominio de núcleos logrado! ⚛️ <a href="capitulo-6.html" 
+                   style="color:#0f0;text-decoration:none;">Siguiente: Gestión de BIOS</a></pre>
+                <div class="mt-1" style="text-align: center;">
+                    <a href="https://buildbot.libretro.com/nightly/" 
+                       target="_blank" 
+                       class="nav-button"
+                       style="padding: 0.5rem;">
+                        Descargar Núcleos Experimentales
+                    </a>
+                </div>
+                <div class="mt-1 neon-green" style="text-align: center;">
+                    Creado por orochi_iory con DeepSeek-R1
+                </div>
             </div>
         </footer>
     </div>
+
+    <!-- Sistema de Audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioManager = {
+                elements: {
+                    hover: document.getElementById('hover-sound'),
+                    enabled: false
+                },
+                
+                init() {
+                    this.setupAudio();
+                    this.setupEventListeners();
+                    this.setupDiagnostics();
+                },
+
+                setupAudio() {
+                    this.elements.hover.volume = 0.35;
+                    this.elements.hover.preload = 'auto';
+                    this.elements.hover.load();
+                },
+
+                setupEventListeners() {
+                    const enableSystem = () => {
+                        if (!this.elements.enabled) {
+                            this.elements.enabled = true;
+                            document.body.classList.add('audio-active');
+                        }
+                    };
+
+                    ['click', 'touchstart', 'keydown'].forEach(event => {
+                        window.addEventListener(event, enableSystem);
+                    });
+
+                    document.querySelectorAll('a, button').forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            if (this.elements.enabled) {
+                                this.playHoverSound();
+                            }
+                        });
+                    });
+                },
+
+                playHoverSound() {
+                    try {
+                        if (this.elements.hover.readyState === 4) {
+                            this.elements.hover.currentTime = 0;
+                            this.elements.hover.play();
+                        }
+                    } catch(error) {
+                        console.error('Error de audio:', error);
+                    }
+                },
+
+                setupDiagnostics() {
+                    const audioCheck = {
+                        formatSupport: {
+                            wav: document.createElement('audio').canPlayType('audio/wav'),
+                            mp3: document.createElement('audio').canPlayType('audio/mpeg')
+                        },
+                        volume: this.elements.hover.volume,
+                        status: this.elements.enabled ? 'active' : 'pending'
+                    };
+                    console.table(audioCheck);
+                }
+            };
+
+            audioManager.init();
+        });
+    </script>
 </body>
 </html>
